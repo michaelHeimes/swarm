@@ -142,6 +142,27 @@
             
         });
     }
+    
+    _app.testimonials_slider = function() {
+        if( $('body').hasClass('home') ) {
+
+            const testimonialsSwiper = new Swiper('#testimonials-slider', {
+              loop: true,
+              slidesPerView: 1,
+              spaceBetween: 15,
+              navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+              },
+              breakpoints: {
+                640: {
+                    spaceBetween: 0,
+                },
+              },
+    
+            });
+        }
+    }
             
     _app.init = function() {
         
@@ -152,7 +173,7 @@
         _app.display_on_load();
         
         // Custom Functions
-        //_app.mobile_takover_nav();
+        _app.testimonials_slider();
     }
     
     

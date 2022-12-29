@@ -6,8 +6,8 @@
 
 <p class="byline">
 	<?php
-	printf( __( 'Posted on %1$s by %2$s - %3$s', 'trailhead' ),
-		get_the_time( __('F j, Y', 'trailhead') ),
+	printf( __( 'Posted on %1$s by %2$s - %3$s', 'swarm' ),
+		get_the_time( __('F j, Y', 'swarm') ),
 		get_the_author_posts_link(),
 		get_the_category_list(', ')
 	);

@@ -1,6 +1,6 @@
 <?php
-// Related Posts Function, matches posts by tags - call using lacrosse_3d_related_posts(); )
-function lacrosse_3d_related_posts() {
+// Related Posts Function, matches posts by tags - call using swarm_related_posts(); )
+function swarm_related_posts() {
 	global $post;
 	$tag_arr = '';
 	$tags = wp_get_post_tags( $post->ID );
@@ -15,7 +15,7 @@ function lacrosse_3d_related_posts() {
 		);
 		$related_posts = get_posts( $args );
 		if($related_posts) {
-		echo __( '<h4>Related Posts</h4>', 'trailhead' );
+		echo __( '<h4>Related Posts</h4>', 'swarm' );
 		echo '<ul class="joints-related-posts">';
 			foreach ( $related_posts as $post ) : setup_postdata( $post ); ?>
 				<li class="related_post">

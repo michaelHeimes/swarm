@@ -1,6 +1,6 @@
 <?php
 // Comment Layout
-function lacrosse_3d_comments($comment, $args, $depth) {
+function swarm_comments($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
 	<li <?php comment_class('panel'); ?>>
 		<div class="media-object">
@@ -14,13 +14,13 @@ function lacrosse_3d_comments($comment, $args, $depth) {
 							// create variable
 							$bgauthemail = get_comment_author_email();
 						?>
-						<?php printf(__('%s', 'trailhead'), get_comment_author_link()) ?> on
-						<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__(' F jS, Y - g:ia', 'trailhead')); ?> </a></time>
-						<?php edit_comment_link(__('(Edit)', 'trailhead'),'  ','') ?>
+						<?php printf(__('%s', 'swarm'), get_comment_author_link()) ?> on
+						<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__(' F jS, Y - g:ia', 'swarm')); ?> </a></time>
+						<?php edit_comment_link(__('(Edit)', 'swarm'),'  ','') ?>
 					</header>
 					<?php if ($comment->comment_approved == '0') : ?>
 						<div class="alert alert-info">
-							<p><?php _e('Your comment is awaiting moderation.', 'trailhead') ?></p>
+							<p><?php _e('Your comment is awaiting moderation.', 'swarm') ?></p>
 						</div>
 					<?php endif; ?>
 					<section class="comment_content clearfix">

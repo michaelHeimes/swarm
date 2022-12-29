@@ -22,7 +22,7 @@ function mh_update_external_link_investments($post_id, $post, $update) {
 		}, 999 );
 	}	
 }
-add_action('save_post', 'mh_update_external_link_investments', 100, 3);
+add_action('save_event', 'mh_update_external_link_investments', 100, 3);
 
 function my_redirect_function() {
 	if(get_field('remove_from_sitemap')){
