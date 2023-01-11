@@ -17,11 +17,123 @@ $fields = get_fields();
 		
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				
-					<header class="entry-header home-banner text-center">
+					<header class="entry-header home-hero text-center has-bg">
+						<!-- <div class="bg hex" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/hero-hex.svg);"></div> -->
+						
+						<img src="<?php echo get_template_directory_uri();?>/assets/images/hero-hex.svg);">
 
+
+									<!-- <svg class="bg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1847.06" height="1600.524" viewBox="0 0 1847.06 1600.524">
+									  <defs>
+										<linearGradient id="linear-gradient" x1="0.6" y1="0.952" x2="0.584" y2="0.46" gradientUnits="objectBoundingBox">
+										  <stop offset="0" stop-color="#101010"/>
+										  <stop offset="1" stop-color="#1e1e1e"/>
+										</linearGradient>
+									  </defs>
+									  <path id="Picture17" d="M1350.644,0a60,60,0,0,1,51.969,30.013l427.144,740.262a60,60,0,0,1,0,59.974l-427.144,740.262a60,60,0,0,1-51.969,30.013H496.416a60,60,0,0,1-51.969-30.013L17.3,830.249a60,60,0,0,1,0-59.974L444.447,30.013A60,60,0,0,1,496.416,0Z" fill="url(#linear-gradient)"/>
+									</svg> -->
+
+
+									<?php 
+									$image = $fields['hero_image'];
+									if( !empty( $image ) ): ?>
+										<div class="bg img" style="background-image: url(<?php echo esc_url($image['url']); ?>)"></div>
+										<!-- <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /> -->
+									<?php endif; ?>
+
+						<div class="grid-container">
+							<div class="grid-x grid-padding-x">
+								<div class="cell small-12 relative">
+									<div class="hero-heading grid-x align-bottom">
+										<h1><?php echo $fields['hero_heading_line_one'];?><br><span><?php echo $fields['hero_heading_line_two'];?></span></h1>
+									</div>
+								</div>
+							</div>
+						</div>
+						
 					</header><!-- .entry-header -->
 				
 					<div class="entry-content" itemprop="text">
+						
+						<section class="copy-three-img-set">
+							<div class="grid-container">
+								<div class="grid-x grid-padding-x align-middle">
+									<div class="cell small-12 tablet-6 large-5">
+										<?php echo $fields['ctis_copy'];?>
+									</div>
+									<div class="cell small-12 tablet-6 large-6 large-offset-1">
+										<div class="three-image-set grid-x grid-padding-x align-middle">
+											<div class="left cell small-6">
+												<?php 
+												$image = $fields['ctis_red_background_image'];
+												if( !empty( $image ) ): ?>
+												<div class="red-hex-img-wrap hex-img-wrap">
+													<div class="hex-img red-img">
+				
+														<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+													</div>
+													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="452.265" height="391.494" viewBox="0 0 452.265 391.494">
+									  				<defs>
+														<linearGradient id="ctis_red_linear-gradient" x1="0.755" y1="0.051" x2="0.175" y2="0.93" gradientUnits="objectBoundingBox">
+										  				<stop offset="0" stop-color="#c00"/>
+										  				<stop offset="0.216" stop-color="#e5403b"/>
+										  				<stop offset="1" stop-color="#fefefe" stop-opacity="0"/>
+														</linearGradient>
+									  				</defs>
+									  				<path id="Picture17" d="M321.882,0A30,30,0,0,1,347.86,14.995L443.6,180.742a30,30,0,0,1,0,30.01L347.86,376.5a30,30,0,0,1-25.978,14.995h-191.5A30,30,0,0,1,104.4,376.5L8.667,210.752a30,30,0,0,1,0-30.01L104.4,14.995A30,30,0,0,1,130.383,0Z" fill="url(#ctis_red_linear-gradient)"/>
+													</svg>
+												</div>
+												<?php endif; ?>
+											</div>
+											
+											<div class="right cell small-6">
+												<?php 
+												$image = $fields['ctis_yellow_background_image'];
+												if( !empty( $image ) ): ?>
+												<div class="yellow-hex-img-wrap hex-img-wrap">
+													<div class="hex-img yellow-img">
+												
+														<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+													</div>
+													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="452.265" height="391.494" viewBox="0 0 452.265 391.494">
+									  				<defs>
+														<linearGradient id="ctis_yellow_linear-gradient" x1="0.755" y1="0.051" x2="0.175" y2="0.93" gradientUnits="objectBoundingBox">
+										  				<stop offset="0" stop-color="#fdd81d"/>
+										  				<stop offset="1" stop-color="#fefefe" stop-opacity="0"/>
+														</linearGradient>
+									  				</defs>
+									  				<path id="Picture17" d="M321.882,0A30,30,0,0,1,347.86,14.995L443.6,180.742a30,30,0,0,1,0,30.01L347.86,376.5a30,30,0,0,1-25.978,14.995h-191.5A30,30,0,0,1,104.4,376.5L8.667,210.752a30,30,0,0,1,0-30.01L104.4,14.995A30,30,0,0,1,130.383,0Z" fill="url(#ctis_yellow_linear-gradient)"/>
+													</svg>
+				
+												</div>
+												<?php endif; ?>
+				
+												<?php 
+												$image = $fields['ctis_blue_background_image'];
+												if( !empty( $image ) ): ?>
+												<div class="blue-hex-img-wrap hex-img-wrap">
+													<div class="hex-img blue-img">
+												
+														<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+													</div>
+													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="452.265" height="391.494" viewBox="0 0 452.265 391.494">
+									  				<defs>
+														<linearGradient id="ctis_blue_linear-gradient" x1="0.755" y1="0.051" x2="0.175" y2="0.93" gradientUnits="objectBoundingBox">
+										  				<stop offset="0" stop-color="#62c6f2"/>
+										  				<stop offset="1" stop-color="#fefefe" stop-opacity="0"/>
+														</linearGradient>
+									  				</defs>
+									  				<path id="Picture17" d="M321.882,0A30,30,0,0,1,347.86,14.995L443.6,180.742a30,30,0,0,1,0,30.01L347.86,376.5a30,30,0,0,1-25.978,14.995h-191.5A30,30,0,0,1,104.4,376.5L8.667,210.752a30,30,0,0,1,0-30.01L104.4,14.995A30,30,0,0,1,130.383,0Z" fill="url(#ctis_blue_linear-gradient)"/>
+													</svg>
+				
+												</div>
+												<?php endif; ?>		
+											</div>						
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
 						
 						<?php get_template_part('template-parts/content', 'image-copy');?>
 						

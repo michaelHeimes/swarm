@@ -1,20 +1,56 @@
 .page-template-page-home {
 	
-	.home-banner {
-		background-color: $black;
+	.home-hero {
 		position: relative;
+		filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.45));
+		
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			object-fit: none;
+			object-position: bottom;
+		}
+		
+		.hero-heading {
+			height: 50.75vw;
+		}
+		
+		.bg.hex {
+			background-position: 50% 100%;
+			background-size: 130%;
+		}
+		
+		.bg.img {
+			background-size: 75vw;
+			background-position: 50% 100%;
+		}
+		
 		.hero-heading {
 			color: $white;
-			position: absolute;
-			z-index: 1;
-			left: 0;
-			right: 0;
-			top: 50%;
-			transform: translateY(-50%);
+			padding: 10rem 0 14.69rem;
+			// position: absolute;
+			// z-index: 1;
+			// left: 0;
+			// right: 0;
+			// top: 50%;
+			// transform: translateY(-50%);
 			h1 {
-				line-height: 1.16;
+				margin: 0;
+				font-size: rem-calc(45);
+				line-height: 1.2;
+				letter-spacing: .04em;
+				text-transform: uppercase;
+				text-shadow: 1px 4px 50px rgba(0,0,0,0.6);
+				// background: linear-gradient(180deg, rgba(3,3,3,0) 0%, rgba(3,3,3,.2) 50%, rgba(116,116,116,0) 100%);
+				
+				span {
+					font-size: rem-calc(90);
+					line-height: 1.052;
+					letter-spacing: .02em;
+				}
+				
 				@include breakpoint(medium) {
-					line-height: 1.4;
 				}
 			}
 		}
@@ -87,6 +123,57 @@
 				}
 			}
 		}
+	}
+	
+	.three-image-set {
+		width: 65vw;
+		
+		.right {
+			transform: translateX(-90px);
+			.hex-img-wrap {
+				margin: 1.85rem 0rem;
+			}
+		}
+		
+		.hex-img-wrap {
+			position: relative;
+			display: inline-block;
+			padding: 2px;
+			filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.45));
+			svg {
+				position: absolute;
+				z-index: -1;
+				top: -3px;
+				left: -4px;
+			}
+			
+		}
+		
+		.hex-img {
+			overflow: hidden;
+			position: relative;
+			width: 450px;
+			height: 381px;
+			// clip-path: path('M321.882,0A30,30,0,0,1,347.86,14.995L443.6,180.742a30,30,0,0,1,0,30.01L347.86,376.5a30,30,0,0,1-25.978,14.995h-191.5A30,30,0,0,1,104.4,376.5L8.667,210.752a30,30,0,0,1,0-30.01L104.4,14.995A30,30,0,0,1,130.383,0Z');
+			clip-path: path('M312.567,0a30,30,0,0,1,25.984,15.006L431.2,175.576a30,30,0,0,1,0,29.987l-92.653,160.57a30,30,0,0,1-25.984,15.006H127.289A30,30,0,0,1,101.3,366.134L8.652,205.564a30,30,0,0,1,0-29.987l92.653-160.57A30,30,0,0,1,127.289,0Z');
+			
+			
+			img {
+				display: block;
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+			}
+			
+
+			
+		&.red-img {
+			
+		}
+			
+		}
+		
 	}
 	
 	.img-copy-card {
