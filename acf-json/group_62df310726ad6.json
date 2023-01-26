@@ -124,6 +124,22 @@
             "delay": 0
         },
         {
+            "key": "field_63bee362e76f7",
+            "label": "Button Link",
+            "name": "ctis_button_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": ""
+        },
+        {
             "key": "field_63be177e85dcf",
             "label": "Red Background Image",
             "name": "ctis_red_background_image",
@@ -531,5 +547,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1673407470
+    "modified": 1673454465
 }

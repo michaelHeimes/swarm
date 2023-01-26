@@ -18,20 +18,9 @@ $fields = get_fields();
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				
 					<header class="entry-header home-hero text-center has-bg">
-						<!-- <div class="bg hex" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/hero-hex.svg);"></div> -->
+						<div class="bg hex" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/hero-hex.svg);"></div>
 						
-						<img src="<?php echo get_template_directory_uri();?>/assets/images/hero-hex.svg);">
-
-
-									<!-- <svg class="bg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1847.06" height="1600.524" viewBox="0 0 1847.06 1600.524">
-									  <defs>
-										<linearGradient id="linear-gradient" x1="0.6" y1="0.952" x2="0.584" y2="0.46" gradientUnits="objectBoundingBox">
-										  <stop offset="0" stop-color="#101010"/>
-										  <stop offset="1" stop-color="#1e1e1e"/>
-										</linearGradient>
-									  </defs>
-									  <path id="Picture17" d="M1350.644,0a60,60,0,0,1,51.969,30.013l427.144,740.262a60,60,0,0,1,0,59.974l-427.144,740.262a60,60,0,0,1-51.969,30.013H496.416a60,60,0,0,1-51.969-30.013L17.3,830.249a60,60,0,0,1,0-59.974L444.447,30.013A60,60,0,0,1,496.416,0Z" fill="url(#linear-gradient)"/>
-									</svg> -->
+						<!-- <img src="<?php echo get_template_directory_uri();?>/assets/images/hero-hex.svg);"> -->
 
 
 									<?php 
@@ -45,7 +34,9 @@ $fields = get_fields();
 							<div class="grid-x grid-padding-x">
 								<div class="cell small-12 relative">
 									<div class="hero-heading grid-x align-bottom">
-										<h1><?php echo $fields['hero_heading_line_one'];?><br><span><?php echo $fields['hero_heading_line_two'];?></span></h1>
+										<div class="cell small-12">
+											<h1><?php echo $fields['hero_heading_line_one'];?><br><span><?php echo $fields['hero_heading_line_two'];?></span></h1>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -55,14 +46,25 @@ $fields = get_fields();
 				
 					<div class="entry-content" itemprop="text">
 						
-						<section class="copy-three-img-set">
+						<section class="copy-three-image-set">
 							<div class="grid-container">
 								<div class="grid-x grid-padding-x align-middle">
 									<div class="cell small-12 tablet-6 large-5">
 										<?php echo $fields['ctis_copy'];?>
+										<?php 
+										$link = $fields['ctis_button_link'];
+										if( $link ): 
+											$link_url = $link['url'];
+											$link_title = $link['title'];
+											$link_target = $link['target'] ? $link['target'] : '_self';
+											?>
+										<div class="btn-wrap">
+											<a class="button" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+										</div>
+										<?php endif; ?>
 									</div>
 									<div class="cell small-12 tablet-6 large-6 large-offset-1">
-										<div class="three-image-set grid-x grid-padding-x align-middle">
+										<div class="three-image-set grid-x grid-padding-x align-middle fixed-width-half">
 											<div class="left cell small-6">
 												<?php 
 												$image = $fields['ctis_red_background_image'];

@@ -79,7 +79,7 @@ $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #212020;
-$white: #fefefe;
+$white: #fff;
 $body-background: $white;
 $body-font-color: $black;
 $body-font-family: $font-body;
@@ -90,7 +90,7 @@ $global-padding: 1rem;
 $global-position: 1rem;
 $global-weight-normal: normal;
 $global-weight-bold: bold;
-$global-radius: 0;
+$global-radius: 10px;
 $global-menu-padding: 0.7rem 1rem;
 $global-menu-nested-margin: 1rem;
 $global-text-direction: ltr;
@@ -294,12 +294,12 @@ $breadcrumbs-item-separator-color: $medium-gray;
 // 11. Button
 // ----------
 
-$button-font-family: inherit;
+$button-font-family: $font-heading;
 $button-font-weight: null;
-$button-padding: 0.85em 1em;
-$button-margin: 0 0 $global-margin 0;
+$button-padding: 0.7em 1em;
+$button-margin: 0 0 0 0;
 $button-fill: solid;
-$button-background: $primary-color;
+$button-background: $black;
 $button-background-hover: scale-color($button-background, $lightness: -15%);
 $button-color: $white;
 $button-color-alt: $black;
@@ -309,7 +309,7 @@ $button-hollow-border-width: 1px;
 $button-sizes: (
   "tiny": 0.6rem,
   "small": 0.75rem,
-  "default": 0.9rem,
+  "default": 1.25rem,
   "large": 1.25rem,
 );
 $button-palette: $foundation-palette;

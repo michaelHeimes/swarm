@@ -13,12 +13,18 @@
 		}
 		
 		.hero-heading {
-			height: 50.75vw;
+			min-height: 50.75vw;
+			@media screen and (min-width: $global-width) {
+				min-height: 0;
+			}
 		}
 		
 		.bg.hex {
 			background-position: 50% 100%;
-			background-size: 130%;
+			background-size: 128.3%;
+			@media screen and (min-width: 1410px) {
+				background-size: 1850px;
+			}
 		}
 		
 		.bg.img {
@@ -62,115 +68,71 @@
 			}
 		}
 	}
-	
-	.hero-bottom {
-		position: relative;
-		min-height: 54vw;
+		
+	.copy-three-image-set {
 		@include breakpoint(tablet) {
-			padding-bottom: 10rem;
+			margin-top: -5rem;
 		}
-		.bg {
-			@include absolute-cover;
-			right: -2rem;
-			top: -17rem;
-			background-position: -200% 0%;
-			@include breakpoint(tablet) {
-				background-position: 50% 0%;
-			}
-		}
-		.region-link {
-			position: relative;
-			padding-bottom: 3rem;
-			//margin-left: -1rem;
-		}
-		.img-copy-card {
-			position: relative;
-			overflow: visible;
-			padding-bottom: 5rem;
-			.right {
-				@include breakpoint(medium down) {
-					position: relative;
-					&:before {
-						content: '';
-						position: absolute;
-						left: 0;
-						right: 0;
-						bottom: 100%;
-						height: 19rem;
-						background: url(../images/header-bg-top.svg);
-						background-repeat: no-repeat;
-						background-position: 100% 50%;
-						background-size: cover;
-					}
-					&:after {
-						content: '';
-						position: absolute;
-						left: 0;
-						right: 0;
-						top: 100%;
-						height: 4rem;
-						background: url(../images/header-bg-bottom.svg);
-						background-repeat: no-repeat;
-						background-position: 50% 100%;
-						background-size: cover;
-					}
-				}
-				svg.thin-stripes {
-					@include breakpoint(medium down) {
-						bottom: -2rem;
-						z-index: 1;
-					}
-				}
-			}
-		}
-	}
 	
-	.three-image-set {
-		width: 65vw;
-		
-		.right {
-			transform: translateX(-90px);
+		.btn-wrap {
+			padding-top: 2.25rem;
+		}
+			
+		.three-image-set {
+			width: 955px;
+			transform-origin: left;
+			
+			@include breakpoint(tablet) {
+				padding-left: 2rem;
+			}
+			
+	
+			
+			.right {
+				transform: translateX(-90px);
+				.hex-img-wrap {
+					margin: 1.85rem 0rem;
+				}
+			}
+			
 			.hex-img-wrap {
-				margin: 1.85rem 0rem;
-			}
-		}
-		
-		.hex-img-wrap {
-			position: relative;
-			display: inline-block;
-			padding: 2px;
-			filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.45));
-			svg {
-				position: absolute;
-				z-index: -1;
-				top: -3px;
-				left: -4px;
-			}
-			
-		}
-		
-		.hex-img {
-			overflow: hidden;
-			position: relative;
-			width: 450px;
-			height: 381px;
-			// clip-path: path('M321.882,0A30,30,0,0,1,347.86,14.995L443.6,180.742a30,30,0,0,1,0,30.01L347.86,376.5a30,30,0,0,1-25.978,14.995h-191.5A30,30,0,0,1,104.4,376.5L8.667,210.752a30,30,0,0,1,0-30.01L104.4,14.995A30,30,0,0,1,130.383,0Z');
-			clip-path: path('M312.567,0a30,30,0,0,1,25.984,15.006L431.2,175.576a30,30,0,0,1,0,29.987l-92.653,160.57a30,30,0,0,1-25.984,15.006H127.289A30,30,0,0,1,101.3,366.134L8.652,205.564a30,30,0,0,1,0-29.987l92.653-160.57A30,30,0,0,1,127.289,0Z');
-			
-			
-			img {
-				display: block;
+				position: relative;
+				display: inline-block;
+				padding: 2px;
+				svg {
 					position: absolute;
-					width: 100%;
-					height: 100%;
-					object-fit: cover;
+					z-index: -1;
+					top: -3px;
+					left: -4px;
+					filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.45));
+				}
+				
 			}
 			
-
-			
-		&.red-img {
-			
-		}
+			.hex-img {
+				overflow: hidden;
+				position: relative;
+				width: 450px;
+				height: 381px;
+				// clip-path: path('M321.882,0A30,30,0,0,1,347.86,14.995L443.6,180.742a30,30,0,0,1,0,30.01L347.86,376.5a30,30,0,0,1-25.978,14.995h-191.5A30,30,0,0,1,104.4,376.5L8.667,210.752a30,30,0,0,1,0-30.01L104.4,14.995A30,30,0,0,1,130.383,0Z');
+				clip-path: path('M312.567,0a30,30,0,0,1,25.984,15.006L431.2,175.576a30,30,0,0,1,0,29.987l-92.653,160.57a30,30,0,0,1-25.984,15.006H127.289A30,30,0,0,1,101.3,366.134L8.652,205.564a30,30,0,0,1,0-29.987l92.653-160.57A30,30,0,0,1,127.289,0Z');
+				
+				
+				img {
+					display: block;
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+				}
+				
+	
+				
+			&.red-img {
+				
+			}
+				
+			}
 			
 		}
 		

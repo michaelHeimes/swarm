@@ -52,6 +52,12 @@ ul.no-dots {
 	margin: 0;
 }
 
+button,
+.button {
+	min-width: 178px;
+	text-transform: uppercase;
+}
+
 /*********************
 POSTS & CONTENT STYLES
 *********************/
