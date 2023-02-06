@@ -1,5 +1,5 @@
 <?php // Borrowed with love from FoundationPress
-	function lacrosse_3d_page_navi() {
+	function swarm_page_navi() {
 		global $wp_query;
 		$big = 999999999; // This needs to be an unlikely integer
 		// For more options and info view the docs for paginate_links()
@@ -10,8 +10,8 @@
 			'total' => $wp_query->max_num_pages,
 			'mid_size' => 5,
 			'prev_next' => true,
-		    'prev_text' => __( '&laquo;', 'trailhead' ),
-		    'next_text' => __( '&raquo;', 'trailhead' ),
+		    'prev_text' => __( '&laquo;', 'swarm' ),
+		    'next_text' => __( '&raquo;', 'swarm' ),
 			'type' => 'list',
 		) );
 		$paginate_links = str_replace( "<ul class='page-numbers'>", "<ul class='pagination'>", $paginate_links );

@@ -1,12 +1,17 @@
 <?php
+	$post_type = get_post_type();
+
 	$row = get_row_index();
 	$image = $args['photo'];
 	$name = $args['name'];
 	$title_affiliation = $args['title_&_affiliation'];
 	$bio = $args['bio'];
+
 ?>
-<div class="team-card cell">
+<div <?php if($post_type == 'swarm_staff'):?>id="post-<?php the_ID(); ?>"<?php endif;?> class="team-card cell">
 	<div class="inner grid-x flex-dir-column align-middle">
+		<?php the_title();?>
+
 		<div class="photo-wrap relative">
 			<?php 
 			if( !empty( $image ) ): ?>
@@ -21,7 +26,7 @@
 			<h4 class="h6"><?php echo $title_affiliation;?></h4>
 		</div>
 		<div class="btn-wrap">
-			<button class="button<?php if($add_chev == 'true'):?> chev-link grid-x align-middle<?php endif;?>" data-open="person-<?php echo $row ;?>">
+			<button class="button" data-open="person-<?php if($post_type == 'swarm_staff') { the_ID(); } else { echo $row; };?>">
 				<span>Bio</span>
 				<svg xmlns="http://www.w3.org/2000/svg" width="9.254" height="15.679" viewBox="0 0 9.254 15.679">
 				  <path id="Path_773" data-name="Path 773" d="M267.723,1265.463l7.132,7.132-7.132,7.132" transform="translate(-267.016 -1264.756)" fill="none" stroke="#000" stroke-width="2"/>
@@ -31,7 +36,7 @@
 	</div>
 </div>
 
-<div class="reveal team-reveal" id="person-<?php echo $row ;?>" data-reveal>
+<div class="reveal team-reveal" id="person-<?php if($post_type == 'swarm_staff') { the_ID(); } else { echo $row; };?>" data-reveal>
 	<div class="top-bg" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/team-reveal-lines.png);background-size: cover;">
 		<div class="grid-x align-right">
 			<button class="close-button" data-close aria-label="Close modal" type="button">

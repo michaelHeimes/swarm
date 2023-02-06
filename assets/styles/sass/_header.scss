@@ -1,9 +1,28 @@
 header.site-header {
-	transition: transform .5s ease;
+	z-index: 999;
+	background-color: $black;
+	padding-top: 5.4rem;
+	transition: all .5s ease;
+	
+&.is-stuck {
+	padding-top: 0;
+	
+	#top-bar-menu {
+		li.logo {	
+			transform: translateY(0);
+			width: 190px;
+		}
+	}
+	
+}
 	
 	#top-bar-menu {
 		
-		li.logo {
+		li.logo {	
+			width: 238px;
+			transform: translateY(2.8rem);
+			transition: transform .5s ease, width .5s ease;
+			
 			@include breakpoint(medium) {
 
 			}
@@ -15,22 +34,21 @@ header.site-header {
 			}			
 		}
 			
+		.location-nav,
 		#main-nav {
 			align-items: center;
 			>li {
 				margin: 0 .3rem 0rem;
 				
 				> a {
-					font-size: rem-calc(21);
+					font-size: rem-calc(25);
 					text-transform: uppercase;
-					letter-spacing: 2.1px;
+					font-weight: bold;
 					padding: 1.78rem 0.5rem 1.78rem;
 					position: relative;
-					
-					@include breakpoint(tablet) {
-						font-size: rem-calc(14);
-						letter-spacing: 1.4px;
-					}
+					line-height: 1.2;
+					color: #707070;
+					letter-spacing: 0.03em;
 					
 					span {
 						&:before {

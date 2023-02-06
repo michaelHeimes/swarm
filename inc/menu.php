@@ -2,17 +2,17 @@
 // Register menus
 register_nav_menus(
 	array(
-		'main-nav'		=> __( 'The Main Menu', 'trailhead' ),		// Main nav in header
-		'region-nav'		=> __( 'The Region Menu', 'trailhead' ),		// Utility nav in header
-		'offcanvas-nav'	=> __( 'The Off-Canvas Menu', 'trailhead' ),	// Off-Canvas nav
-		'footer-links'	=> __( 'Footer Links', 'trailhead' ),		// Secondary nav in footer
-		'social-links'	=> __( 'Social Links', 'trailhead' ),		// Secondary nav in footer	
+		'main-nav'		=> __( 'The Main Menu', 'swarm' ),		// Main nav in header
+		'location-nav'		=> __( 'The Location Menu', 'swarm' ),		// Utility nav in header
+		'offcanvas-nav'	=> __( 'The Off-Canvas Menu', 'swarm' ),	// Off-Canvas nav
+		'footer-links'	=> __( 'Footer Links', 'swarm' ),		// Secondary nav in footer
+		'social-links'	=> __( 'Social Links', 'swarm' ),		// Secondary nav in footer	
 	)
 );
 
 
 // The Top Menu
-function lacrosse_3d_top_nav() {
+function swarm_top_nav() {
 	wp_nav_menu(array(
 		'container'			=> false,						// Remove nav container
 		'menu_id'			=> 'main-nav',					// Adding custom nav id
@@ -28,13 +28,13 @@ function lacrosse_3d_top_nav() {
 }
 
 // The Top Menu
-function lacrosse_3d_region_nav() {
+function swarm_location_nav() {
 	wp_nav_menu(array(
 		'container'			=> false,						// Remove nav container
-		'menu_id'			=> 'region-nav',					// Adding custom nav id
+		'menu_id'			=> 'location-nav',					// Adding custom nav id
 		'menu_class'		=> 'medium-horizontal menu display-on-load',	// Adding custom nav class
 		'items_wrap'		=> '<ul class="%1$s %2$s" data-responsive-menu="accordion tablet-dropdown" data-hover-delay="0" data-closing-time="0" style="visibility: hidden;">%3$s</ul>',
-		'theme_location'	=> 'region-nav',					// Where it's located in the theme
+		'theme_location'	=> 'location-nav',					// Where it's located in the theme
 		'depth'				=> 5,							// Limit the depth of the nav
 		'fallback_cb'		=> false,						// Fallback function (see below)
 		'walker'			=> new Topbar_Menu_Walker(),
@@ -52,7 +52,7 @@ class Topbar_Menu_Walker extends Walker_Nav_Menu {
 }
 
 // The Off Canvas Menu
-function lacrosse_3d_off_canvas_nav() {
+function swarm_off_canvas_nav() {
 	wp_nav_menu(array(
 		'container'			=> false,							// Remove nav container
 		'menu_id'			=> 'offcanvas-nav',					// Adding custom nav id
@@ -73,7 +73,7 @@ class Off_Canvas_Menu_Walker extends Walker_Nav_Menu {
 }
 
 // The Footer Menu
-function lacrosse_3d_footer_links() {
+function swarm_footer_links() {
 	wp_nav_menu(array(
 		'container'			=> 'false',				// Remove nav container
 		'menu_id'			=> 'footer-links',		// Adding custom nav id
@@ -85,7 +85,7 @@ function lacrosse_3d_footer_links() {
 } /* End Footer Menu */
 
 // The Social Links Menu
-function lacrosse_3d_social_links() {
+function swarm_social_links() {
 	wp_nav_menu(array(
 		'container'			=> 'false',				// Remove nav container
 		'menu_id'			=> 'social-links',		// Adding custom nav id
@@ -97,7 +97,7 @@ function lacrosse_3d_social_links() {
 } /* End Social Links Menu */
 
 // Header Fallback Menu
-function lacrosse_3d_main_nav_fallback() {
+function swarm_main_nav_fallback() {
 	wp_page_menu( array(
 		'show_home'		=> true,
 		'menu_class'	=> '',		// Adding custom nav class
@@ -110,7 +110,7 @@ function lacrosse_3d_main_nav_fallback() {
 }
 
 // Footer Fallback Menu
-function lacrosse_3d_footer_links_fallback() {
+function swarm_footer_links_fallback() {
 	/* You can put a default here if you like */
 }
 
@@ -130,13 +130,13 @@ add_filter( 'nav_menu_css_class', 'required_active_nav_class', 10, 2 );
 		
 		// var_dump($args);
 		
-		if ( $args->theme_location == 'region-nav') {
+		if ( $args->theme_location == 'location-nav') {
 		
 			// loop
 			foreach( $items as &$item ) {
 				
 				// vars
-				$icon = get_field('region_badge', $item);
+				$icon = get_field('location_badge', $item);
 				$size = 'full';						
 				// append icon
 				if( $icon ) {

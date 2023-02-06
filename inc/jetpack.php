@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package trailhead
+ * @package swarm
  */
 
 /**
@@ -14,13 +14,13 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function lacrosse_3d_jetpack_setup() {
+function swarm_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support(
 		'infinite-scroll',
 		array(
 			'container' => 'main',
-			'render'    => 'lacrosse_3d_infinite_scroll_render',
+			'render'    => 'swarm_infinite_scroll_render',
 			'footer'    => 'page',
 		)
 	);
@@ -33,7 +33,7 @@ function lacrosse_3d_jetpack_setup() {
 		'jetpack-content-options',
 		array(
 			'post-details' => array(
-				'stylesheet' => 'trailhead-style',
+				'stylesheet' => 'swarm-style',
 				'date'       => '.posted-on',
 				'categories' => '.cat-links',
 				'tags'       => '.tags-links',
@@ -48,13 +48,13 @@ function lacrosse_3d_jetpack_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'lacrosse_3d_jetpack_setup' );
+add_action( 'after_setup_theme', 'swarm_jetpack_setup' );
 
-if ( ! function_exists( 'lacrosse_3d_infinite_scroll_render' ) ) :
+if ( ! function_exists( 'swarm_infinite_scroll_render' ) ) :
 	/**
 	 * Custom render function for Infinite Scroll.
 	 */
-	function lacrosse_3d_infinite_scroll_render() {
+	function swarm_infinite_scroll_render() {
 		while ( have_posts() ) {
 			the_post();
 			if ( is_search() ) :
