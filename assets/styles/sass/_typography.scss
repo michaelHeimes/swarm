@@ -1,0 +1,21 @@
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+	text-transform: uppercase;
+}
+
+ul,
+ol,
+p,
+.p {
+	color: $text-color;
+	font-size: rem-calc(18);
+	line-height: 1.3888; 
+}
+
+.white-color {
+	color: $white;
+}

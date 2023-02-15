@@ -8,7 +8,7 @@
 
 <div class="top-bar-wrap grid-container fluid">
 
-	<div class="top-bar" id="top-bar-menu">
+	<div class="top-bar relative" id="top-bar-menu">
 	
 		<div class="top-bar-left float-left">
 			
@@ -45,7 +45,14 @@
 			<div class="grid-x align-right">
 				<div class="cell shrink">
 					<div class="grid-x align-middle">
-						<div class="cell auto"><?php swarm_location_nav(); ?></div>
+						<div class="cell auto">
+							<ul class="menu locaions-trigger">
+								<li>
+							<!-- <a id="locations-dropdown" href="#">Locations</a> -->
+									<a type="button" data-toggle="header-locations-dropdown" href="#">Locations</a>
+								</li>
+							</ul>
+						</div>
 						<div class="cell shrink"><?php swarm_top_nav();?></div>
 					</div>
 				</div>
@@ -57,6 +64,16 @@
 				<li><a id="menu-toggle" data-toggle="off-canvas"><span></span><span></span><span></span></a></li>
 			</ul>
 		</div>
-	</div>
-	
+		
+		<div class="locations-nav-wrap dropdown-pane" id="header-locations-dropdown" data-dropdown data-auto-focus="true" data-hover="true" data-hover-pane="true">
+			<div class="grid-container">
+				<div class="grid-x grid-padding-x">
+					<div class="cell small-12">
+						<?php swarm_locations_nav(); ?>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>	
 </div>

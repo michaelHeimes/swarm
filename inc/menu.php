@@ -3,7 +3,8 @@
 register_nav_menus(
 	array(
 		'main-nav'		=> __( 'The Main Menu', 'swarm' ),		// Main nav in header
-		'location-nav'		=> __( 'The Location Menu', 'swarm' ),		// Utility nav in header
+		'locations-nav'		=> __( 'The Locations Menu', 'swarm' ),		// Utility nav in header
+		'locations-page nav'		=> __( 'The Locations On-page Menu', 'swarm' ),		// Utility nav in header
 		'offcanvas-nav'	=> __( 'The Off-Canvas Menu', 'swarm' ),	// Off-Canvas nav
 		'footer-links'	=> __( 'Footer Links', 'swarm' ),		// Secondary nav in footer
 		'social-links'	=> __( 'Social Links', 'swarm' ),		// Secondary nav in footer	
@@ -27,15 +28,31 @@ function swarm_top_nav() {
 	));
 }
 
-// The Top Menu
-function swarm_location_nav() {
+// The Location Menu
+function swarm_locations_nav() {
 	wp_nav_menu(array(
 		'container'			=> false,						// Remove nav container
-		'menu_id'			=> 'location-nav',					// Adding custom nav id
+		'menu_id'			=> 'locations-nav',					// Adding custom nav id
 		'menu_class'		=> 'medium-horizontal menu display-on-load',	// Adding custom nav class
-		'items_wrap'		=> '<ul class="%1$s %2$s" data-responsive-menu="accordion tablet-dropdown" data-hover-delay="0" data-closing-time="0" style="visibility: hidden;">%3$s</ul>',
-		'theme_location'	=> 'location-nav',					// Where it's located in the theme
-		'depth'				=> 5,							// Limit the depth of the nav
+		'items_wrap'		=> '<ul class="%1$s %2$s" data-hover-delay="0" data-closing-time="0" style="visibility: hidden;">%3$s</ul>',
+		'theme_location'	=> 'locations-nav',					// Where it's located in the theme
+		'depth'				=> 4,							// Limit the depth of the nav
+		'fallback_cb'		=> false,						// Fallback function (see below)
+		'walker'			=> new Topbar_Menu_Walker(),
+		'link_before'    => '<span>',
+		'link_after'     => '</span>'	
+	));
+}
+
+// The Location On-page Menu
+function swarm_locations_page_nav() {
+	wp_nav_menu(array(
+		'container'			=> false,						// Remove nav container
+		'menu_id'			=> 'locations-page-nav',					// Adding custom nav id
+		'menu_class'		=> 'medium-horizontal menu display-on-load',	// Adding custom nav class
+		'items_wrap'		=> '<ul class="%1$s %2$s" data-responsive-menu="accordion" data-hover-delay="0" data-closing-time="0" style="visibility: hidden;">%3$s</ul>',
+		'theme_location'	=> 'locations-page-nav',					// Where it's located in the theme
+		'depth'				=> 4,							// Limit the depth of the nav
 		'fallback_cb'		=> false,						// Fallback function (see below)
 		'walker'			=> new Topbar_Menu_Walker(),
 		'link_before'    => '<span>',

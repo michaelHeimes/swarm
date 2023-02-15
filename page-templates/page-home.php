@@ -18,7 +18,7 @@ $fields = get_fields();
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				
 					<header class="entry-header home-hero text-center has-bg">
-						<div class="bg hex" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/hero-hex.svg);"></div>
+						<div class="bg hex" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/big-hex.svg);"></div>
 						
 						<!-- <img src="<?php echo get_template_directory_uri();?>/assets/images/hero-hex.svg);"> -->
 
@@ -35,7 +35,7 @@ $fields = get_fields();
 								<div class="cell small-12 relative">
 									<div class="hero-heading grid-x align-bottom">
 										<div class="cell small-12">
-											<h1><?php echo $fields['hero_heading_line_one'];?><br><span><?php echo $fields['hero_heading_line_two'];?></span></h1>
+											<h1 class="white-color"><?php echo $fields['hero_heading_line_one'];?><br><span><?php echo $fields['hero_heading_line_two'];?></span></h1>
 										</div>
 									</div>
 								</div>
@@ -49,7 +49,7 @@ $fields = get_fields();
 						<section class="copy-three-image-set">
 							<div class="grid-container">
 								<div class="grid-x grid-padding-x align-middle">
-									<div class="cell small-12 tablet-6 large-5">
+									<div class="copy-wrap cell small-12 tablet-6 large-5">
 										<?php echo $fields['ctis_copy'];?>
 										<?php 
 										$link = $fields['ctis_button_link'];
@@ -137,21 +137,36 @@ $fields = get_fields();
 							</div>
 						</section>
 						
-						<?php get_template_part('template-parts/content', 'image-copy');?>
-						
-						<section class="locations">
-							<div class="grid-container">
-								<div class="grid-x grid-padding-x text-center">
-									<div class="cell small-12">
-										<?php if( $locations_heading = $fields['locations_heading'] ):?>
-											<h2><?php echo $locations_heading;?></h2>
+						<section class="locations has-bg">
+							<div class="bg hex" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/big-hex.svg);"></div>
+							<div class="grid-container relative">
+								<div class="grid-x grid-padding-x align-center text-center">
+									<div class="cell small-12 tablet-6">
+										<?php if( !empty( $fields['locations_heading'] ) ):?>
+											<h2 class="white-color"><?php echo $fields['locations_heading'];?></h2>
 										<?php endif;?>
-										MAP HERE
-										<?php swarm_location_nav(); ?>
+										<?php if( !empty( $fields['locations_text'] ) ):?>
+											<p class="white-color"><?php echo $fields['locations_text'];?></p>
+										<?php endif;?>
+									</div>
+									<div class="cell small-12">
+										<?php if( !empty( $fields['locations_map_image'] ) ) {
+											$imgID = $fields['locations_map_image']['ID'];
+											$img_alt = trim( strip_tags( get_post_meta( $imgID, '_wp_attachment_image_alt', true ) ) );
+											$img = wp_get_attachment_image( $imgID, 'full', false, [ "class" => "", "alt"=>$img_alt] );
+											echo '<div class="img-wrap">';
+											echo $img;
+											echo '</div>';
+										}?>
+										<?php swarm_locations_nav(); ?>
 									</div>
 								</div>
 							</div>
 						</section>
+						
+						<?php get_template_part('template-parts/content', 'image-copy');?>
+						
+
 						
 												
 						<section class="locations has-object-fit">

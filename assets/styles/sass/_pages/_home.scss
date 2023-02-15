@@ -1,7 +1,15 @@
 .page-template-page-home {
 	
+	.bg.hex {
+		background-size: 128.3%;
+		@media screen and (min-width: 1410px) {
+			background-size: 1850px;
+		}
+	}
+	
 	.home-hero {
 		position: relative;
+		z-index: 1;
 		filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.45));
 		
 		img {
@@ -13,45 +21,31 @@
 		}
 		
 		.hero-heading {
-			min-height: 50.75vw;
-			@media screen and (min-width: $global-width) {
-				min-height: 0;
-			}
+			min-height: 51.12vw;
 		}
 		
 		.bg.hex {
 			background-position: 50% 100%;
-			background-size: 128.3%;
-			@media screen and (min-width: 1410px) {
-				background-size: 1850px;
-			}
 		}
 		
 		.bg.img {
-			background-size: 75vw;
+			background-size: 117vw;
 			background-position: 50% 100%;
 		}
 		
 		.hero-heading {
+			position: relative;
 			color: $white;
-			padding: 10rem 0 14.69rem;
-			// position: absolute;
-			// z-index: 1;
-			// left: 0;
-			// right: 0;
-			// top: 50%;
-			// transform: translateY(-50%);
+			padding: 8.32rem 0;
+
 			h1 {
 				margin: 0;
 				font-size: rem-calc(45);
 				line-height: 1.2;
 				letter-spacing: .04em;
-				text-transform: uppercase;
-				text-shadow: 1px 4px 50px rgba(0,0,0,0.6);
-				// background: linear-gradient(180deg, rgba(3,3,3,0) 0%, rgba(3,3,3,.2) 50%, rgba(116,116,116,0) 100%);
-				
+
 				span {
-					font-size: rem-calc(90);
+					font-size: rem-calc(100);
 					line-height: 1.052;
 					letter-spacing: .02em;
 				}
@@ -73,14 +67,33 @@
 		@include breakpoint(tablet) {
 			margin-top: -5rem;
 		}
+		
+		.copy-wrap {
+			h2 {
+				margin-bottom: 0.33em;
+			}
+		}
 	
 		.btn-wrap {
-			padding-top: 2.25rem;
+			padding-top: 2.05rem;
 		}
 			
 		.three-image-set {
+			position: relative;
 			width: 955px;
 			transform-origin: left;
+			
+		&:before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			transform: translate(-16%, -31%);
+			z-index: -1;
+			background-image: url(../images/home-hex-pattern-1.png);
+			background-size: cover;
+		}
 			
 			@include breakpoint(tablet) {
 				padding-left: 2rem;
@@ -136,6 +149,12 @@
 			
 		}
 		
+	}
+	
+	.locations {
+		.bg.hex {
+			background-position: 50% 0%;
+		}
 	}
 	
 	.img-copy-card {

@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_62ef97392e9f0",
-            "label": "Image & Copy Card",
-            "name": "image_copy_card",
+            "label": "Image & Copy",
+            "name": "image_copy",
             "aria-label": "",
             "type": "group",
             "instructions": "",
@@ -828,5 +828,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1672240699
+    "modified": 1676386941
 }
