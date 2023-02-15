@@ -4,7 +4,7 @@ register_nav_menus(
 	array(
 		'main-nav'		=> __( 'The Main Menu', 'swarm' ),		// Main nav in header
 		'locations-nav'		=> __( 'The Locations Menu', 'swarm' ),		// Utility nav in header
-		'locations-page nav'		=> __( 'The Locations On-page Menu', 'swarm' ),		// Utility nav in header
+		'locations-page-nav'		=> __( 'The Locations On-page Menu', 'swarm' ),		// Utility nav in header
 		'offcanvas-nav'	=> __( 'The Off-Canvas Menu', 'swarm' ),	// Off-Canvas nav
 		'footer-links'	=> __( 'Footer Links', 'swarm' ),		// Secondary nav in footer
 		'social-links'	=> __( 'Social Links', 'swarm' ),		// Secondary nav in footer	

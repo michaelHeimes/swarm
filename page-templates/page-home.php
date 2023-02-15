@@ -158,7 +158,9 @@ $fields = get_fields();
 											echo $img;
 											echo '</div>';
 										}?>
-										<?php swarm_locations_nav(); ?>
+										<div class="on-page-locations-wrap hex-black-bg text-left">
+											<?php swarm_locations_nav(); ?>
+										</div>
 									</div>
 								</div>
 							</div>
