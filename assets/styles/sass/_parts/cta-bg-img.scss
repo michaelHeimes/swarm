@@ -1,0 +1,15 @@
+.cta-w-bg-img {
+	.inner {
+		min-height: 651px;
+		> .cell {
+			padding-top: 4rem;
+			padding-bottom: 4rem;
+			h2 {
+				font-size: rem-calc(80);
+				line-height: 1.2;
+				padding-top: 0.42em;
+				margin-bottom: .37em;
+			}
+		}
+	}
+}

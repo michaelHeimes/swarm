@@ -24,6 +24,13 @@ svg {
 		right: 0;
 		bottom: 0;
 		background-repeat: no-repeat;
+		
+	&.mask {
+		background: transparent linear-gradient(1deg, #000000 0%, #121212C8 42%, #54545400 100%) 0% 0% no-repeat padding-box;
+		mix-blend-mode: multiply;
+		opacity: 0.31;
+	}
+		
 	}
 }
 
@@ -40,6 +47,10 @@ svg {
 	.grid-container {
 		position: relative;
 	}
+}
+
+.overflow-hidden {
+	overflow: hidden;
 }
 
 .h-100 {
@@ -60,6 +71,12 @@ button,
 .button {
 	min-width: 178px;
 	text-transform: uppercase;
+	
+&.white {
+	background-color: $white;
+	color: $black;
+}
+	
 }
 
 /*********************

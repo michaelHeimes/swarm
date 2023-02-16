@@ -171,9 +171,9 @@
 		}
 		.on-page-locations-wrap {
 			position: relative;
-						
+			padding: 0 0 6rem;
+
 			.locations-nav {
-				padding: 2rem;
 				visibility: visible !important;
 				width: 100%;
 				
@@ -183,6 +183,7 @@
 				}
 			
 				> li {
+					width: 100%;
 					> a {
 						display: none;
 					}
@@ -190,8 +191,14 @@
 						// position: absolute;	
 						// z-index: 555;
 						width: 100%;
+						margin-left: -1rem;
+						margin-right: -1rem;
 						display: flex !important;
 						justify-content: space-between;
+						
+						> li {
+							padding: 0 1rem;
+						}
 						
 						a {
 							font-size: rem-calc(20);
@@ -226,12 +233,12 @@
 								
 								> li {
 									
-									&.show {
-										ul {
-											height: auto;
-											visibility: visible;
-										}
-									}
+									// &.show {
+									// 	ul {
+									// 		height: auto;
+									// 		visibility: visible;
+									// 	}
+									// }
 									
 									ul {
 										visibility: hidden;
@@ -372,14 +379,82 @@
 		}
 	}
 	
-	.wrap-for-bg {
-		margin-top: 3.5rem;
-		>.bg {
-			@include absolute-cover;
-			top: 86px;
+	.cta-w-bg-img {
+		
+	}
+	
+	.testimonials-slider-section {
+		padding-top: 9.34275rem;
+		
+		&:before {
+			content: '';
+			display: block;
+			height: 486px;
+			width: 100%;
+			position: absolute;
+			z-index: -1;
+			top: -4rem;
+			background: transparent linear-gradient(180deg, #383838 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+			mix-blend-mode: multiply;
+			opacity: 0.25;
+		}
+		
+		&:after {
+			content: "";
+			width: 858px;
+			height: 537px;	
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translate(25%, -40%);
+			z-index: -2;
+			background-image: url(../images/testimonials-hex-pattern.png);
 			background-size: cover;
 		}
+		
+		h2 {
+			margin-bottom: 4.58rem;
+		}
+		
+		#testimonials-text-slider {
+			margin-top: 2.3rem;
+		}
+		
+		p.name {
+			width: 50%;
+			font-weight: 500;
+		}
+		
+		.testimonials-text-swiper-pagination {
+			width: 50%;
+			float: right;
+			margin-top: -3.9rem;
+			
+			.swiper-pagination-bullet {
+				display: inline-block;
+				position: relative;
+				background: transparent;
+				width: 24.113px;
+				height: 20.882px;
+				opacity: 1;
+				
+				svg {
+					position: absolute;
+					top: 0;
+					left: 0;	
+				}
+				
+			&.swiper-pagination-bullet-active {
+				g.active-bg {
+					fill: $black !important;
+				}
+			}
+				
+			}
+		}
 	}
+	
+
 	
 	.copy-cards {
 		position: relative;

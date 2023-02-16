@@ -158,7 +158,7 @@ $fields = get_fields();
 											echo $img;
 											echo '</div>';
 										}?>
-										<div class="on-page-locations-wrap hex-black-bg text-left">
+										<div class="on-page-locations-wrap text-left">
 											<?php swarm_locations_nav(); ?>
 										</div>
 									</div>
@@ -166,94 +166,71 @@ $fields = get_fields();
 							</div>
 						</section>
 						
-						<?php get_template_part('template-parts/content', 'image-copy');?>
-						
+						<?php get_template_part('template-parts', 'reusable-component', ['foo' => 'bar']); ?>
 
 						
-												
-						<section class="locations has-object-fit">
-							<?php 
-							$image = get_field('cta_background_image');
-							if( !empty( $image ) ): ?>
-								<img class="object-fit-img" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-							<?php endif; ?>
+						<?php $cta_bg_img = $fields['cta_background_image'];
+						get_template_part('template-parts/content', 'cta-background-image',
+							array(
+								'cta_bg_img' => $cta_bg_img,
+							)
+						);
+						?>
+
+						<section class="testimonials-slider-section relative">
 							<div class="grid-container">
-								<div class="grid-x grid-padding-x text-center">
-									<div class="cell small-12">
-										<?php if( $cta_heading = $fields['cta_heading'] ):?>
-											<h2><?php echo $cta_heading;?></h2>
-										<?php endif;?>
-										<?php if( $cta_text = $fields['cta_text'] ):?>
-											<p><?php echo $cta_text;?></p>
-										<?php endif;?>
-										<?php 
-										$link = get_field('cta_button_link');
-										if( $link ): 
-											$link_url = $link['url'];
-											$link_title = $link['title'];
-											$link_target = $link['target'] ? $link['target'] : '_self';
-											?>
-											<a class="button" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-										<?php endif; ?>
-									</div>
-								</div>
-							</div>
-						</section>
-						
-						<section class="testimonials-slider-section">
-							<?php if ($testimonial_slides = $fields['testimonials_slider']):?>
-							<div id="testimonials-slider" class="swiper-container relative">
-								<div class="swiper-wrapper">
-									<?php foreach($testimonial_slides as $testimonial_slide):?>
-									<div class="cell swiper-slide">
-										<div class="inner">
-											<div class="grid-container">
-												<div class="grid-x grid-margin-x">
-													<div class="cell small-12 tablet-4">
-														<div class="photo-wrap">															
-															<?php 
-															$image = $testimonial_slide['photo'];
-															if( !empty( $image ) ): ?>
-																<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-															<?php endif; ?>
-														</div>
+								<div class="grid-x grid-padding-x relative align-middle">
+									<div class="cell small-12 tablet-6">
+										<?php if ($testimonial_slides = $fields['testimonials_slider']):?>
+										<div id="testimonials-img-slider" class="overflow-hidden">
+											<div class="swiper-wrapper">
+												<?php foreach($testimonial_slides as $testimonial_slide):?>
+												<div class="cell swiper-slide">
+													<div class="photo-wrap">
+														<?php 
+														$image = $testimonial_slide['photo'];
+														if( !empty( $image ) ): ?>
+															<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+														<?php endif; ?>
 													</div>
-													<div class="cell small-12 tablet-8">
+												</div>
+												<?php endforeach;?>
+											</div>
+										</div>
+										<?php endif;?>
+									</div>
+										
+									<div class="cell small-12 tablet-6 large-5 large-offset-1">
+										<?php if( !empty( $fields['testimonials_header'] ) ):?>
+											<h2><?php echo $fields['testimonials_header'];?></h2>
+											<svg width="49" height="44" xmlns="http://www.w3.org/2000/svg"><text transform="translate(-5 -29)" fill="#212020" fill-rule="nonzero" font-family="GoodHeadlinePro-NarrBold, Good Headline Pro" font-size="212" font-weight="bold"><tspan x="0" y="179">“</tspan></text></svg>
+										<?php endif;?>
+										<?php if ($testimonial_slides = $fields['testimonials_slider']):?>
+										<div id="testimonials-text-slider" class="overflow-hidden">
+											<div class="swiper-wrapper">
+												<?php foreach($testimonial_slides as $testimonial_slide):?>
+												<div class="cell swiper-slide">
+													<div class="inner">
 														<?php if( !empty($testimonial_slide['quote']) ):?>
 															<p class="quote">
-																"<?php echo $testimonial_slide['quote'];?>"
+																<?php echo $testimonial_slide['quote'];?>
 															</p>
 														<?php endif;?>
 														<?php if( !empty($testimonial_slide['name']) ):?>
 															<p class="name">
-																<?php echo $testimonial_slide['name'];?>
+																<i>– <?php echo $testimonial_slide['name'];?></i>
 															</p>
 														<?php endif;?>
 													</div>
 												</div>
+												<?php endforeach;?>
 											</div>
+											<div class="testimonials-text-swiper-pagination text-right"></div>
 										</div>
+										<?php endif;?>
 									</div>
-									<?php endforeach;?>
 								</div>
-								<button class="swiper-button-prev">
-									<svg xmlns="http://www.w3.org/2000/svg" width="51.5" height="103" viewBox="0 0 51.5 103">
-									  <g id="Group_76" data-name="Group 76" transform="translate(-51 -4343.303)">
-										<path id="Path_736" data-name="Path 736" d="M51.5,0V103a51.5,51.5,0,0,1,0-103Z" transform="translate(51 4343.303)" fill="#efefef" opacity="0.794"/>
-										<path id="Path_737" data-name="Path 737" d="M86.7,16741.152l-18.483,18.482,18.483,18.482" transform="translate(1.285 -12365.35)" fill="none" stroke="#019fdb" stroke-width="2"/>
-									  </g>
-									</svg>
-								</button>
-								<button class="swiper-button-next">
-									<svg xmlns="http://www.w3.org/2000/svg" width="51.5" height="103" viewBox="0 0 51.5 103">
-									  <g id="Group_32" data-name="Group 32" transform="translate(102.5 4271) rotate(180)">
-										<path id="Path_736" data-name="Path 736" d="M51.5,0V103a51.5,51.5,0,0,1,0-103Z" transform="translate(51 4168)" fill="#efefef" opacity="0.794"/>
-										<path id="Path_737" data-name="Path 737" d="M86.7,16741.152l-18.483,18.482,18.483,18.482" transform="translate(1.285 -12540.652)" fill="none" stroke="#019fdb" stroke-width="2"/>
-									  </g>
-									</svg>
-								</button>
 							</div>
-							<?php endif;?>
 						</section>
 						
 					</div> <!-- end article section -->
