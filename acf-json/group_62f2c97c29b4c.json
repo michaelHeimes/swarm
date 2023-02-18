@@ -58,72 +58,6 @@
             "maxlength": ""
         },
         {
-            "key": "field_62f2f85b192b4",
-            "label": "Partners",
-            "name": "",
-            "aria-label": "",
-            "type": "accordion",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "open": 0,
-            "multi_expand": 0,
-            "endpoint": 0
-        },
-        {
-            "key": "field_62f2f882192b5",
-            "label": "Heading",
-            "name": "partners_heading",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_62f2f88f192b6",
-            "label": "Logos",
-            "name": "partners_logos",
-            "aria-label": "",
-            "type": "gallery",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "preview_size": "medium",
-            "insert": "append",
-            "library": "all",
-            "min": "",
-            "max": "",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
             "key": "field_62f2fdb44a61d",
             "label": "Footer Content",
             "name": "",
@@ -143,7 +77,7 @@
         },
         {
             "key": "field_62f2fdc14a61e",
-            "label": "Logo",
+            "label": "Parent Logo",
             "name": "footer_logo",
             "aria-label": "",
             "type": "image",
@@ -156,7 +90,6 @@
                 "id": ""
             },
             "return_format": "array",
-            "preview_size": "medium",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -164,12 +97,13 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": ""
+            "mime_types": "",
+            "preview_size": "medium"
         },
         {
-            "key": "field_62f2fdde4a61f",
-            "label": "Privacy Policy",
-            "name": "privacy_policy",
+            "key": "field_62f2fe094a620",
+            "label": "Parent Company Link",
+            "name": "parent_company_link",
             "aria-label": "",
             "type": "link",
             "instructions": "",
@@ -183,9 +117,9 @@
             "return_format": "array"
         },
         {
-            "key": "field_62f2fe094a620",
-            "label": "Parent Company Link",
-            "name": "parent_company_link",
+            "key": "field_62f2fdde4a61f",
+            "label": "Privacy Policy",
+            "name": "privacy_policy",
             "aria-label": "",
             "type": "link",
             "instructions": "",
@@ -217,5 +151,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1669053297
+    "modified": 1676745869
 }

@@ -49,37 +49,44 @@ $theme_color = $fields['theme_color'];
 						$loop = new WP_Query($args);
 						
 						if ( $loop->have_posts() ) :?>
-							<section class="events">
+							<section class="events overflow-hidden">
 								<div class="grid-container">
 									<div class="grid-x grid-padding-x">
 										<div class="cell small-12">
 											<h2>Upcoming Events</h2>
 										</div>
 									</div>
-									<div class="grid-x grid-padding-x small-up-1 medium-up-2 tablet-up-3">
+									<div class="cards-wrap grid-x grid-padding-x small-up-1 medium-up-2 large-up-3">
 										<?php while ( $loop->have_posts() ) : $loop->the_post();?>
-											<article id="post-<?php the_ID(); ?>" <?php post_class('cell'); ?>>
-												<?php 
-												$image = get_field('image');
-												if( !empty( $image ) ): ?>
-												<div class="thumb">
-													<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-												</div>
-												<?php endif; ?>
-												<h3><?php the_title();?></h3>
-												<?php if( $date_for_archive_grid = get_field('date_for_archive_grid') ):?>
-													<p class="date">
-														<?php echo $date_for_archive_grid;?>
-													</p>
-												<?php endif;?>
-												<?php if( $location = get_field('location') ):?>
-													<p class="date">
-														<?php echo $location;?>
-													</p>
-												<?php endif;?>
-												<div class="btn-link">
-													<a href="<?php echo esc_url( get_permalink() );?>" rel="bookmark">Button Text</a>
-												</div>
+											<article id="post-<?php the_ID(); ?>" <?php post_class('cell event-card'); ?>>
+												<div class="inner">
+													<?php 
+													$image = get_field('image');
+													if( !empty( $image ) ): ?>
+													<div class="thumb theme-<?php echo $theme_color;?>">
+														<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+													</div>
+													<?php endif; ?>
+												<div class="text-wrap">
+													<div class="grid-x grid-padding-x">
+														<div class="cell auto">
+															<h3><?php the_title();?></h3>
+															<?php if( $date_for_archive_grid = get_field('date_for_archive_grid') ):?>
+																<p class="date">
+																	<?php echo $date_for_archive_grid;?>
+																</p>
+															<?php endif;?>
+															<?php if( $location = get_field('location') ):?>
+																<p class="date">
+																	<?php echo $location;?>
+																</p>
+															<?php endif;?>
+														</div>
+														<div class="cell shrink">
+															<div class="btn-link">
+																<a class="button" href="<?php echo esc_url( get_permalink() );?>" rel="bookmark">Learn More</a>
+															</div>
+														</div>
 											</article>
 										<?php endwhile;?>
 									</div>
@@ -87,16 +94,6 @@ $theme_color = $fields['theme_color'];
 							</section>
 						
 						<?php endif; wp_reset_postdata(); ?>
-
-					<?php 
-						if( !empty( $fields['image_copy'] ) ) {
-							get_template_part('template-parts/content', 'image-copy',
-								array(
-									'image_copy' => $fields['image_copy'],
-								)
-							);
-						}
-					?>
 					
 					<?php 
 						if( !empty($fields['cta_background_image']) ) {
@@ -109,6 +106,16 @@ $theme_color = $fields['theme_color'];
 						}
 					?>
 					
+					<?php 
+						if( !empty( $fields['image_copy'] ) ) {
+							get_template_part('template-parts/content', 'image-copy',
+								array(
+									'image_copy' => $fields['image_copy'],
+								)
+							);
+						}
+					?>
+					
 					<section class="our-team">
 						<div class="grid-container">
 							<div class="grid-x grid-padding-x">
@@ -116,7 +123,7 @@ $theme_color = $fields['theme_color'];
 									<h2>Coaching Staff</h2>
 								</div>
 								<div class="cell small-12">
-									<div class="bio-cards grid-x grid-padding-x">
+									<div class="team-cards grid-x grid-padding-x">
 										<?php 
 											$bio_cards = $fields['bio_cards'];
 											if( !empty($bio_cards) ):
@@ -146,7 +153,7 @@ $theme_color = $fields['theme_color'];
 				</div> <!-- end article section -->
 						
 				<footer class="article-footer">
-					 <?php wp_link_pages(); ?>
+					<?php get_template_part('template-parts/content', 'prefooter');?>
 				</footer> <!-- end article footer -->
 					
 			</article><!-- #post-<?php the_ID(); ?> -->

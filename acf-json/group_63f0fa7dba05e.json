@@ -1,11 +1,11 @@
 {
-    "key": "group_62f2ff5c531a6",
-    "title": "Social Links",
+    "key": "group_63f0fa7dba05e",
+    "title": "Partner Post",
     "fields": [
         {
-            "key": "field_62f2ff67b86e2",
-            "label": "Icon",
-            "name": "icon",
+            "key": "field_63f0fa7ed06ad",
+            "label": "Logo",
+            "name": "logo",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -17,7 +17,6 @@
                 "id": ""
             },
             "return_format": "array",
-            "preview_size": "medium",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -25,15 +24,16 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": ""
+            "mime_types": "",
+            "preview_size": "medium"
         }
     ],
     "location": [
         [
             {
-                "param": "nav_menu_item",
+                "param": "post_type",
                 "operator": "==",
-                "value": "location\/social-links"
+                "value": "partner"
             }
         ]
     ],
@@ -46,5 +46,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1676747638
+    "modified": 1676737169
 }

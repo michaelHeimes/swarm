@@ -13,9 +13,187 @@
 			background-position: 50% 100%;
 		}
 	}
-	.bio-cards {
+	.events {
+		padding-bottom: 5.12rem;
+		
+		h2 {
+			margin-bottom: 3.7rem;
+		}
+		
+		.cards-wrap {
+			@include breakpoint(xlarge) {
+				margin: 0 -2.925rem;
+			}
+		}
+		
+		.event-card {
+			padding-bottom: 4.55rem;
+			@include breakpoint(xlarge) {
+				padding: 0 2.925rem 4.55rem;
+			}
+			.thumb {
+				position: relative;
+				margin-bottom: 2.1rem;
+				
+				&:before {
+					content: '';
+					position: absolute;
+					top: -6px;
+					left: -6px;
+					right: -6px;
+					bottom: -6px;
+					mix-blend-mode: multiply;
+					opacity: 0.31;
+				}
+				
+			&.theme-blue {
+				&:before {
+					background: transparent linear-gradient(180deg, $gradient-blue 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+				}
+			}
+			&.theme-red {
+				&:before {
+					background: transparent linear-gradient(180deg, $gradient-red 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+				}
+			}
+			&.theme-yellow {
+				&:before {
+					background: transparent linear-gradient(180deg, $gradient-yellow 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+				}
+			}
+				
+			}
+			
+		@include breakpoint(medium) {
+			&:nth-child(odd) {
+				.thumb {
+					&.theme-blue {
+						&:before {
+							background: transparent linear-gradient(124deg, $gradient-blue 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+						}
+					}
+					&.theme-red {
+						&:before {
+							background: transparent linear-gradient(124deg, $gradient-red 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+						}
+					}
+					&.theme-yellow {
+						&:before {
+							background: transparent linear-gradient(124deg, $gradient-yellow 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+						}
+					}
+				}
+			}
+			&:nth-child(even) {
+				.thumb {
+					&.theme-blue {
+						&:before {
+							background: transparent linear-gradient(236deg, $gradient-blue 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+						}
+					}
+					&.theme-red {
+						&:before {
+							background: transparent linear-gradient(236deg, $gradient-red 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+						}
+					}
+					&.theme-yellow {
+						&:before {
+							background: transparent linear-gradient(236deg, $gradient-yellow 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+						}
+					}
+				}
+			}
+		}
+		
+		@include breakpoint(large) {
+			&:nth-child(3n+1){
+				.thumb {
+					&.theme-blue {
+						&:before {
+							background: transparent linear-gradient(124deg, $gradient-blue 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+						}
+					}
+					&.theme-red {
+						&:before {
+							background: transparent linear-gradient(124deg, $gradient-red 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+						}
+					}
+					&.theme-yellow {
+						&:before {
+							background: transparent linear-gradient(124deg, $gradient-yellow 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+						}
+					}
+				}
+			}
+			&:nth-child(3n+2){
+				.thumb {
+					&.theme-blue {
+						&:before {
+							background: transparent linear-gradient(180deg, $gradient-blue 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+						}
+					}
+					&.theme-red {
+						&:before {
+							background: transparent linear-gradient(180deg, $gradient-red 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+						}
+					}
+					&.theme-yellow {
+						&:before {
+							background: transparent linear-gradient(180deg, $gradient-yellow 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+						}
+					}
+				}
+			}
+			&:nth-child(3n+3){
+				.thumb {
+					&.theme-blue {
+						&:before {
+							background: transparent linear-gradient(236deg, $gradient-blue 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+						}
+					}
+					&.theme-red {
+						&:before {
+							background: transparent linear-gradient(236deg, $gradient-red 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+						}
+					}
+					&.theme-yellow {
+						&:before {
+							background: transparent linear-gradient(236deg, $gradient-yellow 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+						}
+					}
+				}
+			}
+		}
+			
+			
+			.text-wrap {
+				h3,
+				p {
+					margin-bottom: 0;
+				}
+			}
+		}
+		
+
+	}
+	.cta-w-bg-img {
+		margin-bottom: 9.3125rem;
+	}
+	.img-copy-card {
+		padding-bottom: 4.35rem;
+	}
+	.our-team {
+		h2 {
+			margin-bottom: 5.55rem;
+		}
+	}
+	.team-cards {
 		@include breakpoint(medium) {
 			justify-content: space-between;
+		}
+		.left {
+			padding-top: 1.5rem;
+			padding-bottom: 1.5rem;
 		}
 	}
 }

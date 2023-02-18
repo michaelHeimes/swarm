@@ -2,19 +2,22 @@
 	$post_type = get_post_type();
 	
 	$theme_color = $args['theme_color'];
-	$row = get_row_index();
+	$row = $args['row'];
 	$image = $args['photo'];
 	$name = $args['name'];
+	$name_slug = slugify($name);
 	$bio = $args['bio'];
 ?>
 <div <?php if($post_type == 'swarm_staff'):?>id="post-<?php the_ID(); ?>"<?php endif;?> class="staff-card cell small-12 medium-6 tablet-shrink">
 	<div class="inner grid-x">
 		<div class="left cell small-12 tablet-auto">
+			<div class="grid-x flex-dir-column align-justify h-100">
 			<h3 class="h4 uppercase"><?php echo $name;?></h3>
 			<div class="btn-wrap">
-				<a href="" data-open="person-<?php if($post_type == 'swarm_staff') { the_ID(); } else { echo $row; };?>">
+				<button class="staff-modal-trigger" data-open="<?php echo $name_slug;?>">
 					<u>Learn More</u>
-				</a>
+				</button>
+			</div>
 			</div>
 		</div>
 		<div class="right cell small-12 tablet-shrink">
@@ -27,15 +30,45 @@
 					echo $img;
 					echo '</div>';
 				}?>
+				<?php if( $theme_color == 'blue' ):?>
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="220.103" height="190.527" viewBox="0 0 220.103 190.527">
+					  <defs>
+						<linearGradient id="linear-gradient-blue" x1="0.755" y1="0.051" x2="0.175" y2="0.93" gradientUnits="objectBoundingBox">
+						  <stop offset="0" stop-color="#62c6f2"/>
+						  <stop offset="1" stop-color="#fefefe" stop-opacity="0"/>
+						</linearGradient>
+					  </defs>
+					  <path id="Picture17" d="M159.305,0a10,10,0,0,1,8.659,5l49.25,85.264a10,10,0,0,1,0,10l-49.25,85.264a10,10,0,0,1-8.659,5H60.8a10,10,0,0,1-8.659-5L2.889,100.265a10,10,0,0,1,0-10L52.139,5A10,10,0,0,1,60.8,0Z" fill="url(#linear-gradient-blue)"/>
+					</svg>
+				<?php endif;?>
 				<?php if( $theme_color == 'red' ):?>
-				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="452.265" height="391.494" viewBox="0 0 452.265 391.494"><defs><linearGradient id="ctis_red_linear-gradient" x1="0.755" y1="0.051" x2="0.175" y2="0.93" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#c00"/><stop offset="0.216" stop-color="#e5403b"/><stop offset="1" stop-color="#fefefe" stop-opacity="0"/></linearGradient></defs><path id="Picture17" d="M321.882,0A30,30,0,0,1,347.86,14.995L443.6,180.742a30,30,0,0,1,0,30.01L347.86,376.5a30,30,0,0,1-25.978,14.995h-191.5A30,30,0,0,1,104.4,376.5L8.667,210.752a30,30,0,0,1,0-30.01L104.4,14.995A30,30,0,0,1,130.383,0Z" fill="url(#ctis_red_linear-gradient)"/></svg>
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="220.103" height="190.527" viewBox="0 0 220.103 190.527">
+				  <defs>
+					<linearGradient id="linear-gradient-red" x1="0.755" y1="0.051" x2="0.175" y2="0.93" gradientUnits="objectBoundingBox">
+					  <stop offset="0" stop-color="#c00"/>
+					  <stop offset="1" stop-color="#fefefe" stop-opacity="0"/>
+					</linearGradient>
+				  </defs>
+				  <path id="Picture17" d="M159.305,0a10,10,0,0,1,8.659,5l49.25,85.264a10,10,0,0,1,0,10l-49.25,85.264a10,10,0,0,1-8.659,5H60.8a10,10,0,0,1-8.659-5L2.889,100.265a10,10,0,0,1,0-10L52.139,5A10,10,0,0,1,60.8,0Z" fill="url(#linear-gradient-red)"/>
+				</svg>
+				<?php endif;?>
+				<?php if( $theme_color == 'yellow' ):?>
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="220.103" height="190.527" viewBox="0 0 220.103 190.527">
+				  <defs>
+					<linearGradient id="linear-gradient-yellow" x1="0.755" y1="0.051" x2="0.175" y2="0.93" gradientUnits="objectBoundingBox">
+					  <stop offset="0" stop-color="#FDD81D"/>
+					  <stop offset="1" stop-color="#fefefe" stop-opacity="0"/>
+					</linearGradient>
+				  </defs>
+				  <path id="Picture17" d="M159.305,0a10,10,0,0,1,8.659,5l49.25,85.264a10,10,0,0,1,0,10l-49.25,85.264a10,10,0,0,1-8.659,5H60.8a10,10,0,0,1-8.659-5L2.889,100.265a10,10,0,0,1,0-10L52.139,5A10,10,0,0,1,60.8,0Z" fill="url(#linear-gradient-yellow)"/>
+				</svg>
 				<?php endif;?>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div class="reveal staff-reveal" id="person-<?php if($post_type == 'swarm_staff') { the_ID(); } else { echo $row; };?>" data-reveal data-deep-link="true" data-update-history="true">
+<div class="reveal staff-reveal" id="<?php echo $name_slug;?>" data-reveal data-deep-link="true" data-update-history="true">
 	<div class="grid-x align-right">
 		<button class="close-button" data-close aria-label="Close modal" type="button">
 			<svg xmlns="http://www.w3.org/2000/svg" width="37.973" height="38.615" viewBox="0 0 37.973 38.615">
@@ -60,8 +93,38 @@
 							echo $img;
 							echo '</div>';
 						}?>
+						<?php if( $theme_color == 'blue' ):?>
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="213.801" height="185.072" viewBox="0 0 213.801 185.072">
+						  <defs>
+						<linearGradient id="linear-gradient-blue" x1="0.755" y1="0.051" x2="0.175" y2="0.93" gradientUnits="objectBoundingBox">
+							<stop offset="0" stop-color="#62c6f2"/>
+							<stop offset="1" stop-color="#fefefe" stop-opacity="0"/>
+						  </linearGradient>
+						  </defs>
+						  <path id="Picture17" d="M154.579,0a10,10,0,0,1,8.659,5l47.674,82.536a10,10,0,0,1,0,10l-47.674,82.536a10,10,0,0,1-8.659,5H59.222a10,10,0,0,1-8.659-5L2.889,97.538a10,10,0,0,1,0-10L50.563,5a10,10,0,0,1,8.659-5Z" fill="url(#linear-gradient-blue)"/>
+						</svg>
+
+						<?php endif;?>
 						<?php if( $theme_color == 'red' ):?>
-						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="213.801" height="185.072" viewBox="0 0 213.801 185.072"><defs><linearGradient id="linear-gradient" x1="0.755" y1="0.051" x2="0.175" y2="0.93" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#c00"/><stop offset="0.216" stop-color="#e5403b"/><stop offset="1" stop-color="#fefefe" stop-opacity="0"/></linearGradient></defs><path id="Picture17" d="M154.579,0a10,10,0,0,1,8.659,5l47.674,82.536a10,10,0,0,1,0,10l-47.674,82.536a10,10,0,0,1-8.659,5H59.222a10,10,0,0,1-8.659-5L2.889,97.538a10,10,0,0,1,0-10L50.563,5a10,10,0,0,1,8.659-5Z" fill="url(#linear-gradient)"/>
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="213.801" height="185.072" viewBox="0 0 213.801 185.072">
+						  <defs>
+							<linearGradient id="linear-gradient-red" x1="0.755" y1="0.051" x2="0.175" y2="0.93" gradientUnits="objectBoundingBox">
+							  <stop offset="0" stop-color="#c00"/>
+							  <stop offset="1" stop-color="#fefefe" stop-opacity="0"/>
+							</linearGradient>
+						  </defs>
+						  <path id="Picture17" d="M154.579,0a10,10,0,0,1,8.659,5l47.674,82.536a10,10,0,0,1,0,10l-47.674,82.536a10,10,0,0,1-8.659,5H59.222a10,10,0,0,1-8.659-5L2.889,97.538a10,10,0,0,1,0-10L50.563,5a10,10,0,0,1,8.659-5Z" fill="url(#linear-gradient-red)"/>
+						</svg>
+						<?php endif;?>
+						<?php if( $theme_color == 'yellow' ):?>
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="213.801" height="185.072" viewBox="0 0 213.801 185.072">
+						  <defs>
+					<linearGradient id="linear-gradient-yellow" x1="0.755" y1="0.051" x2="0.175" y2="0.93" gradientUnits="objectBoundingBox">
+							<stop offset="0" stop-color="#FDD81D"/>
+							<stop offset="1" stop-color="#fefefe" stop-opacity="0"/>
+						  </linearGradient>
+						  </defs>
+						  <path id="Picture17" d="M154.579,0a10,10,0,0,1,8.659,5l47.674,82.536a10,10,0,0,1,0,10l-47.674,82.536a10,10,0,0,1-8.659,5H59.222a10,10,0,0,1-8.659-5L2.889,97.538a10,10,0,0,1,0-10L50.563,5a10,10,0,0,1,8.659-5Z" fill="url(#linear-gradient-yellow)"/>
 						</svg>
 						<?php endif;?>
 					</div>

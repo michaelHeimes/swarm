@@ -1,9 +1,8 @@
 .page-template-page-home {
 	
-	.home-hero {
+	.hero {
 		position: relative;
-		z-index: 1;
-		filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.45));
+		z-index: 0;
 		
 		img {
 			position: absolute;
@@ -79,24 +78,10 @@
 			width: 955px;
 			transform-origin: left;
 			
-		&:before {
-			content: '';
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			position: absolute;
-			transform: translate(-16%, -31%);
-			z-index: -1;
-			background-image: url(../images/home-hex-pattern-1.png);
-			background-size: cover;
-		}
-			
 			@include breakpoint(tablet) {
 				padding-left: 2rem;
 			}
-			
-	
-			
+
 			.right {
 				transform: translateX(-90px);
 				.hex-img-wrap {
@@ -148,7 +133,8 @@
 	}
 	
 	.locations {
-		overflow: hidden;
+		padding-top: 3.88rem;
+		margin-top: -5rem;
 		
 	&:before {
 		content: '';
@@ -165,6 +151,11 @@
 		.bg.hex {
 			background-position: 50% 0%;
 		}
+		
+		h2 {
+			margin-bottom: 0.95rem;
+		}
+		
 		.on-page-locations-wrap {
 			position: relative;
 			padding: 0 0 6rem;

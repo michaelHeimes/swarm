@@ -17,7 +17,7 @@ $fields = get_fields();
 		
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				
-					<header class="entry-header home-hero text-center has-bg">
+					<header class="entry-header hero text-center has-bg">
 						<div class="bg hex hero-bg-hex" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/big-hex.svg);"></div>
 						
 						<!-- <img src="<?php echo get_template_directory_uri();?>/assets/images/hero-hex.svg);"> -->
@@ -44,7 +44,7 @@ $fields = get_fields();
 						
 					</header><!-- .entry-header -->
 				
-					<div class="entry-content" itemprop="text">
+					<div class="entry-content home" itemprop="text">
 						
 						<section class="copy-three-image-set">
 							<div class="grid-container">
@@ -236,7 +236,7 @@ $fields = get_fields();
 					</div> <!-- end article section -->
 							
 					<footer class="article-footer">
-						 <?php wp_link_pages(); ?>
+						<?php get_template_part('template-parts/content', 'prefooter');?>
 					</footer> <!-- end article footer -->
 						
 				</article><!-- #post-<?php the_ID(); ?> -->
