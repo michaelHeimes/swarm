@@ -1,0 +1,160 @@
+<?php
+/**
+ * Template name: Location Page
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package swarm
+ */
+
+get_header();
+global $post;
+$page_slug = $post->post_name;
+$fields = get_fields();
+$theme_color = $fields['theme_color'];
+?>
+<div class="content theme-<?php echo $theme_color;?>">
+	<div class="inner-content">
+
+		<main id="primary" class="site-main">
+	
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			
+				<header class="entry-header text-center has-bg">
+					<div class="bg hex hero-bg-hex" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/big-hex.svg);"></div>
+					<div class="grid-container relative">
+						<div class="grid-x grid-padding-x align-bottom">
+							<div class="cell">
+								<h1 class="white-color">Swarm <?php the_title();?></h1>
+							</div>
+						</div>
+					</div>
+				</header><!-- .entry-header -->
+			
+				<div class="entry-content" itemprop="text">
+					
+					<?php						
+						$args = array(
+							'post_type' => 'event',
+							'posts_per_page' => -1,
+							'order' => 'ASC',
+							'tax_query' => array(
+								array (
+									'taxonomy' => 'location',
+									'field' => 'slug',
+									'terms' => $page_slug,
+								)
+							),
+						);
+						$loop = new WP_Query($args);
+						
+						if ( $loop->have_posts() ) :?>
+							<section class="events">
+								<div class="grid-container">
+									<div class="grid-x grid-padding-x">
+										<div class="cell small-12">
+											<h2>Upcoming Events</h2>
+										</div>
+									</div>
+									<div class="grid-x grid-padding-x small-up-1 medium-up-2 tablet-up-3">
+										<?php while ( $loop->have_posts() ) : $loop->the_post();?>
+											<article id="post-<?php the_ID(); ?>" <?php post_class('cell'); ?>>
+												<?php 
+												$image = get_field('image');
+												if( !empty( $image ) ): ?>
+												<div class="thumb">
+													<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+												</div>
+												<?php endif; ?>
+												<h3><?php the_title();?></h3>
+												<?php if( $date_for_archive_grid = get_field('date_for_archive_grid') ):?>
+													<p class="date">
+														<?php echo $date_for_archive_grid;?>
+													</p>
+												<?php endif;?>
+												<?php if( $location = get_field('location') ):?>
+													<p class="date">
+														<?php echo $location;?>
+													</p>
+												<?php endif;?>
+												<div class="btn-link">
+													<a href="<?php echo esc_url( get_permalink() );?>" rel="bookmark">Button Text</a>
+												</div>
+											</article>
+										<?php endwhile;?>
+									</div>
+								</div>
+							</section>
+						
+						<?php endif; wp_reset_postdata(); ?>
+
+					<?php 
+						if( !empty( $fields['image_copy'] ) ) {
+							get_template_part('template-parts/content', 'image-copy',
+								array(
+									'image_copy' => $fields['image_copy'],
+								)
+							);
+						}
+					?>
+					
+					<?php 
+						if( !empty($fields['cta_background_image']) ) {
+							$cta_bg_img = $fields['cta_background_image'];
+							get_template_part('template-parts/content', 'cta-background-image',
+								array(
+									'cta_bg_img' => $cta_bg_img,
+								)
+							);
+						}
+					?>
+					
+					<section class="our-team">
+						<div class="grid-container">
+							<div class="grid-x grid-padding-x">
+								<div class="cell small-12 text-center">
+									<h2>Coaching Staff</h2>
+								</div>
+								<div class="cell small-12">
+									<div class="bio-cards grid-x grid-padding-x">
+										<?php 
+											$bio_cards = $fields['bio_cards'];
+											if( !empty($bio_cards) ):
+												$row = 1;
+												foreach($bio_cards as $bio_card):
+													$bio_card_fields = $bio_card['bio_card'];
+					
+													$args = array(
+														'theme_color' => $theme_color,
+														'photo' => $bio_card_fields['photo'],
+														'name' => $bio_card_fields['name'],
+														'bio' => $bio_card_fields['bio'],
+														'row' => $row 
+													);
+					
+												get_template_part('template-parts/loop', 'team-card', $args);
+					
+												$row++; endforeach;
+											endif;
+										?>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					
+				</div> <!-- end article section -->
+						
+				<footer class="article-footer">
+					 <?php wp_link_pages(); ?>
+				</footer> <!-- end article footer -->
+					
+			</article><!-- #post-<?php the_ID(); ?> -->
+	
+		</main><!-- #main -->
+			
+	</div>
+</div>
+
+<?php
+get_footer();

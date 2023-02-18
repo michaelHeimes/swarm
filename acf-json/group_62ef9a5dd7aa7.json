@@ -3,11 +3,11 @@
     "title": "Location Template",
     "fields": [
         {
-            "key": "field_62efa300ceb40",
-            "label": "Logo",
-            "name": "logo",
+            "key": "field_63efd04301c4d",
+            "label": "Theme Color",
+            "name": "theme_color",
             "aria-label": "",
-            "type": "image",
+            "type": "button_group",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,20 +16,59 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
-            "preview_size": "medium",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
+            "choices": {
+                "blue": "Blue",
+                "red": "Red",
+                "yellow": "Yellow"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_63efcfa49c94f",
+            "label": "CTA w\/ Background Image",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_63efcfbe9c950",
+            "label": "CTA w\/ Background Image",
+            "name": "cta_w_background_image_clone",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "field_63ed750a44f71"
+            ],
+            "display": "seamless",
+            "layout": "",
+            "prefix_label": 0,
+            "prefix_name": 0
         },
         {
             "key": "field_62efa3cdceb41",
-            "label": "Section 1",
+            "label": "Image & Copy Card",
             "name": "",
             "aria-label": "",
             "type": "accordion",
@@ -99,11 +138,12 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "",
+            "layout": "table",
+            "pagination": 0,
             "min": 0,
             "max": 0,
-            "layout": "table",
-            "button_label": "Add Row",
+            "collapsed": "",
+            "button_label": "Add Card",
             "rows_per_page": 20,
             "sub_fields": [
                 {
@@ -135,9 +175,9 @@
     "location": [
         [
             {
-                "param": "taxonomy",
+                "param": "page_template",
                 "operator": "==",
-                "value": "location"
+                "value": "page-templates\/page-location.php"
             }
         ]
     ],
@@ -152,5 +192,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1672238567
+    "modified": 1676674322
 }

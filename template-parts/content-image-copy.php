@@ -1,38 +1,35 @@
 <?php 
-if ( is_archive() ) {
-	$queried_object = get_queried_object();
-	$image_copy_card = get_field( 'image_copy_card', $queried_object );	
-} else {
-	$image_copy_card = get_field('image_copy_card');
-}
+	$image_copy = $args['image_copy'];
 	
-if( !empty($image_copy_card) ):
-		$layout = $image_copy_card['layout'];
+	$layout = $image_copy['layout'];
+	$image = $image_copy['image'];
+	$text = $image_copy['text'];
+	$buttons = $image_copy['buttons'];
 ?>
 
 <section class="img-copy-card <?php echo $layout;?>">
 	<div class="grid-container">
-		<div class="inner grid-x grid-padding-x<?php if($layout == 'image-right'):?> tablet-flex-dir-row-reverse<?php endif;?>">
+		<div class="inner grid-x grid-padding-x align-center<?php if($layout == 'image-right'):?> tablet-flex-dir-row-reverse<?php endif;?>">
 
-			<div class="left cell small-12 tablet-6 large-7 grid-x align-top">
-				<?php 
-					if( !empty($image_copy_card['image']) ):
-					$image = $image_copy_card['image'];
-				?>
-				<div class="img-wrap">
-					<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-				</div>
-				<?php endif;?>
+			<div class="left cell small-12 tablet-6<?php if($layout == 'image-right'):?> large-5 large-offset-1<?php endif;?> grid-x align-center">
+				<?php if( !empty( $image ) ) {
+					$imgID = $image['ID'];
+					$img_alt = trim( strip_tags( get_post_meta( $imgID, '_wp_attachment_image_alt', true ) ) );
+					$img = wp_get_attachment_image( $imgID, 'half-container', false, [ "class" => "", "alt"=>$img_alt] );
+					echo '<div class="img-wrap">';
+					echo $img;
+					echo '</div>';
+				}?>
 			</div>
-			<div class="right black-bg cell small-12 tablet-6 large-5">
+			<div class="right cell small-12 tablet-6<?php if($layout == 'image-left'):?> large-5 large-offset-1<?php endif;?>  grid-x flex-dir-column align-center">
 				<div class="text-btns-wrap">
-					<?php if( !empty($image_copy_card['text']) ):?>
-					<div class="text-wrap black-bg">
-						<?php echo $image_copy_card['text'];?>
+					<?php if( !empty($text) ):?>
+					<div class="text-wrap">
+						<?php echo $text;?>
 					</div>
 					<?php endif;?>
 					<?php 
-					if( $buttons = $image_copy_card['buttons'] ):?>
+					if( !empty($buttons) ):?>
 					<div class="btns-wrap grid-x grid-padding-x">
 						<?php foreach($buttons as $button):
 							if( $button['button_link'] ):
@@ -40,18 +37,10 @@ if( !empty($image_copy_card) ):
 								$link_url = $btn_link['url'];
 								$link_title = $btn_link['title'];
 								$link_target = $btn_link['target'] ? $btn_link['target'] : '_self';
-								
-								$add_chev = $button['add_right_chevron'];
-	
 						?>
 						<div class="btn-wrap cell shrink">
-							<a class="button<?php if($add_chev == 'true'):?> chev-link grid-x align-middle<?php endif;?>" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
+							<a class="button" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
 								<span><?php echo esc_html( $link_title ); ?></span>
-								<?php if($add_chev == 'true'):?>
-									<svg xmlns="http://www.w3.org/2000/svg" width="9.254" height="15.679" viewBox="0 0 9.254 15.679">
-									  <path id="Path_773" data-name="Path 773" d="M267.723,1265.463l7.132,7.132-7.132,7.132" transform="translate(-267.016 -1264.756)" fill="none" stroke="#000" stroke-width="2"/>
-									</svg>
-								<?php endif;?>
 							</a>
 						</div>
 					<?php endif;
@@ -63,4 +52,3 @@ if( !empty($image_copy_card) ):
 		</div>
 	</div>
 </section>
-<?php endif;?>

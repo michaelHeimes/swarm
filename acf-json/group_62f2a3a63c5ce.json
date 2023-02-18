@@ -21,26 +21,6 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
-        },
-        {
-            "key": "field_62f2c675f0a1c",
-            "label": "Instagram Shortcode",
-            "name": "instagram_shortcode",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "[instagram-feed feed=1]",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
         }
     ],
     "location": [
@@ -63,5 +43,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1669053298
+    "modified": 1676674276
 }

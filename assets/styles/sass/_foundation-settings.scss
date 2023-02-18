@@ -755,7 +755,7 @@ $responsive-embed-ratios: (
 // ----------
 
 $reveal-background: $white;
-$reveal-width: 600px;
+$reveal-width: 720px;
 $reveal-max-width: $global-width;
 $reveal-padding: $global-padding;
 $reveal-border: 1px solid $medium-gray;
@@ -872,8 +872,8 @@ $tooltip-radius: $global-radius;
 // 55. Top Bar
 // -----------
 
-$topbar-padding: 0.5rem;
-$topbar-background: $black;
+$topbar-padding: 0;
+$topbar-background: transparent;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
 $topbar-input-width: 200px;

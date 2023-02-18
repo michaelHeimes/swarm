@@ -18,7 +18,7 @@ $fields = get_fields();
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				
 					<header class="entry-header home-hero text-center has-bg">
-						<div class="bg hex" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/big-hex.svg);"></div>
+						<div class="bg hex hero-bg-hex" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/big-hex.svg);"></div>
 						
 						<!-- <img src="<?php echo get_template_directory_uri();?>/assets/images/hero-hex.svg);"> -->
 
@@ -165,16 +165,16 @@ $fields = get_fields();
 								</div>
 							</div>
 						</section>
-						
-						<?php get_template_part('template-parts', 'reusable-component', ['foo' => 'bar']); ?>
-
-						
-						<?php $cta_bg_img = $fields['cta_background_image'];
-						get_template_part('template-parts/content', 'cta-background-image',
-							array(
-								'cta_bg_img' => $cta_bg_img,
-							)
-						);
+												
+						<?php 
+							if( !empty($fields['cta_background_image']) ) {
+								$cta_bg_img = $fields['cta_background_image'];
+								get_template_part('template-parts/content', 'cta-background-image',
+									array(
+										'cta_bg_img' => $cta_bg_img,
+									)
+								);
+							}
 						?>
 
 						<section class="testimonials-slider-section relative">

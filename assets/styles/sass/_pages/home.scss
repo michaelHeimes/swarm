@@ -1,12 +1,5 @@
 .page-template-page-home {
 	
-	.bg.hex {
-		background-size: 128.3%;
-		@media screen and (min-width: 1410px) {
-			background-size: 1850px;
-		}
-	}
-	
 	.home-hero {
 		position: relative;
 		z-index: 1;
@@ -21,7 +14,10 @@
 		}
 		
 		.hero-heading {
-			min-height: 51.12vw;
+			min-height: 59.35vw;
+			@include breakpoint(xxlarge) {
+				min-height: 854px;
+			}
 		}
 		
 		.bg.hex {
@@ -426,9 +422,11 @@
 		}
 		
 		.testimonials-text-swiper-pagination {
+			position: relative;
+			z-index: 1;
 			width: 50%;
 			float: right;
-			margin-top: -3.9rem;
+			//margin-top: -3.47rem;
 			
 			.swiper-pagination-bullet {
 				display: inline-block;
@@ -445,6 +443,7 @@
 				}
 				
 			&.swiper-pagination-bullet-active {
+				cursor: default;
 				g.active-bg {
 					fill: $black !important;
 				}

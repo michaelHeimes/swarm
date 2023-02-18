@@ -1,0 +1,21 @@
+.page-template-page-location {
+	.entry-header {
+		.grid-x {
+			min-height: 31.7365vw;
+			padding-top: 5.3rem;
+			padding-bottom: 5.3rem;
+			@include breakpoint(xxlarge) {
+				min-height: 457px;
+			}
+		}
+		.bg {
+			z-index: -1;
+			background-position: 50% 100%;
+		}
+	}
+	.bio-cards {
+		@include breakpoint(medium) {
+			justify-content: space-between;
+		}
+	}
+}

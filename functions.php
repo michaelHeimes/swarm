@@ -259,23 +259,8 @@ require_once(get_template_directory().'/inc/image-sizes.php');
 // Expire Posts by setting as draft
 require_once(get_template_directory().'/inc/expire-posts.php');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Create a Location Term for Location Pages
+require_once(get_template_directory().'/inc/create-location-term.php');
 
 
 

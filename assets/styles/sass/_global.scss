@@ -34,6 +34,13 @@ svg {
 	}
 }
 
+.bg.hex.hero-bg-hex {
+	//background-size: 128.3%;
+	@media screen and (min-width: 1410px) {
+		background-size: 1850px;
+	}
+}
+
 .has-object-fit {
 	position: relative;
 	overflow: hidden;

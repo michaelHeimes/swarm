@@ -47,7 +47,7 @@
                     "name": "image",
                     "aria-label": "",
                     "type": "image",
-                    "instructions": "",
+                    "instructions": "Minimum width of 1168px.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -56,7 +56,6 @@
                         "id": ""
                     },
                     "return_format": "array",
-                    "preview_size": "medium",
                     "library": "all",
                     "min_width": "",
                     "min_height": "",
@@ -64,7 +63,8 @@
                     "max_width": "",
                     "max_height": "",
                     "max_size": "",
-                    "mime_types": ""
+                    "mime_types": "",
+                    "preview_size": "thumbnail"
                 },
                 {
                     "key": "field_62ef97393d78a",
@@ -107,27 +107,6 @@
                     "button_label": "Add Button",
                     "rows_per_page": 20,
                     "sub_fields": [
-                        {
-                            "key": "field_62ef98a895264",
-                            "label": "Add Right Chevron",
-                            "name": "add_right_chevron",
-                            "aria-label": "",
-                            "type": "true_false",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 0,
-                            "ui": 0,
-                            "ui_on_text": "",
-                            "ui_off_text": "",
-                            "parent_repeater": "field_62ef989695263"
-                        },
                         {
                             "key": "field_62ef97393d792",
                             "label": "Button Link",
@@ -689,11 +668,11 @@
                     "name": "photo",
                     "aria-label": "",
                     "type": "image",
-                    "instructions": "",
+                    "instructions": "Minimum 416px X 362px",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "33",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
@@ -706,7 +685,7 @@
                     "max_height": "",
                     "max_size": "",
                     "mime_types": "",
-                    "preview_size": "medium"
+                    "preview_size": "thumbnail"
                 },
                 {
                     "key": "field_62f2bbb38877d",
@@ -718,35 +697,15 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "33",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
                     "default_value": "",
+                    "maxlength": "",
                     "placeholder": "",
                     "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_62f2ba9408817",
-                    "label": "Title & Affiliation",
-                    "name": "title_&_affiliation",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "33",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
+                    "append": ""
                 },
                 {
                     "key": "field_62f2baaf08818",
@@ -925,5 +884,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1676510764
+    "modified": 1676683744
 }
