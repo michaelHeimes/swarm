@@ -18,14 +18,7 @@
 								<?php swarm_footer_links();?>
 							</div>
 							<div class="cell small-12 hide-for-tablet">
-								<div class="socials-wrap grid-x grid-padding-x align-middle">
-									<div class="cell shrink white-color">
-										Socials:
-									</div>
-									<div class="cell shrink tablet-auto">
-										<?php swarm_social_links();?>
-									</div>
-								</div>
+								<?php get_template_part('template-parts/content', 'social-links');?>
 							</div>
 							
 							<div class="pc-link-wrap cell shrink">
@@ -61,15 +54,8 @@
 					<div class="site-info">
 						<div class="grid-container">
 							<div class="grid-x grid-padding-x">
-								<div class="cell auto show-for-tablet">
-									<div class="socials-wrap grid-x grid-padding-x align-middle">
-										<div class="cell shrink white-color">
-											Socials:
-										</div>
-										<div class="cell auto">
-											<?php swarm_social_links();?>
-										</div>
-									</div>
+								<div class="cell auto show-for-tablet grid-x align-start">
+									<?php get_template_part('template-parts/content', 'social-links');?>
 								</div>
 								<div class="cell small-12 tablet-shrink">
 									<small class="white-color">Copyright  &copy; <?php echo date("Y");?>, 3STEP Sports. All Rights Reserved.

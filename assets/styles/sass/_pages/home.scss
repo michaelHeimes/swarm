@@ -180,8 +180,50 @@
 			position: relative;
 			padding: 0 0 6rem;
 			
+			.dropdown-pane {
+				padding: 1rem 0 0;
+				.white-bg {
+					border-radius: $global-radius;
+					padding: 1rem 1.5rem .5rem;
+				}
+				
+				li {
+					margin-bottom: .5rem;
+				}
+				
+			}
 			
-			.mobile-locations-nav,
+			.mobile-locations-nav {
+				a {
+					font-size: rem-calc(18);
+					font-weight: bold;
+					color: $text-color;
+					padding: 0;
+				}
+				
+				ul.submenu {
+					padding: 1rem 0 .5rem;
+				}
+				
+				> li {
+				width: 100%;
+					> a {
+						display: none;
+					}
+					> ul {
+						display: block !important;
+						> li {
+							ul > li > ul {
+								a {
+									font-size: rem-calc(16);
+									font-weight: 400;
+								}
+							}
+						}
+					}
+				}
+			}
+
 			.locations-nav {
 				visibility: visible !important;
 				width: 100%;
@@ -191,71 +233,6 @@
 					padding: 0;
 				}
 			
-				> li {
-					width: 100%;
-					> a {
-					}
-					> ul {
-
-						
-						> li {
-							padding: 0 1rem;
-						}
-						
-						a {
-							font-size: rem-calc(20);
-							font-weight: bold;
-							line-height: 1.2;
-						}
-						
-						> li {
-
-							
-							> a {
-								font-family: $font-heading;
-								font-size: rem-calc(36);
-								text-transform: uppercase;
-								font-weight: bold;				
-								position: relative;
-								line-height: 1.2;
-								color: $heading-white;
-								letter-spacing: 0.03em;
-								margin-bottom: 0.67em;
-							}
-							
-							span {
-
-							}
-							> ul {
-
-								
-								> li {
-									
-									// &.show {
-									// 	ul {
-									// 		height: auto;
-									// 		visibility: visible;
-									// 	}
-									// }
-									
-									ul {
-										visibility: hidden;
-										transition: all .4s ease;
-	
-										a {
-											font-size: rem-calc(18);
-											span {
-												padding-left: 1rem;
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-			.locations-nav {
 				> li {
 					width: 100%;
 					> a {
@@ -274,7 +251,11 @@
 							padding: 0 1rem;
 						}
 						
-
+						a {
+							font-size: rem-calc(20);
+							font-weight: bold;
+							line-height: 1.2;
+						}
 						
 						> li {
 							width: auto;
@@ -283,7 +264,15 @@
 							flex-direction: column;
 							
 							> a {
-
+								font-family: $font-heading;
+								font-size: rem-calc(36);
+								text-transform: uppercase;
+								font-weight: bold;				
+								position: relative;
+								line-height: 1.2;
+								color: $heading-white;
+								letter-spacing: 0.03em;
+								margin-bottom: 0.67em;
 							}
 							
 							span {
@@ -303,9 +292,18 @@
 									// }
 									
 									ul {
-										visibility: hidden;
-										transition: all .4s ease;
-				
+										//visibility: hidden;
+										//transition: all .4s ease;
+									&.show {
+										visibility: visible;
+									}
+	
+										a {
+											font-size: rem-calc(18);
+											span {
+												padding-left: 1rem;
+											}
+										}
 									}
 								}
 							}

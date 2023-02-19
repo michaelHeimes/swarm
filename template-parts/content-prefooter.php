@@ -43,7 +43,7 @@
 				</div>
 				<?php if( is_front_page() ):
 					while ( $loop->have_posts() ) : $loop->the_post();?>
-					<div class="cell small-12 medium-6 xmedium-4 large-3">
+					<div class="cell small-3">
 						<?php if( !empty( get_field('logo') ) ) {
 							$imgID = get_field('logo')['ID'];
 							$img_alt = trim( strip_tags( get_post_meta( $imgID, '_wp_attachment_image_alt', true ) ) );

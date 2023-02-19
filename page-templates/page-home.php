@@ -159,8 +159,18 @@ $fields = get_fields();
 											echo '</div>';
 										}?>
 										<div class="on-page-locations-wrap text-left">
-											<div class="hide-for-tablet">
-												<?php swarm_mobile_locations_nav(); ?>
+											<div class="hide-for-tablet grid-x align-center">
+												<button class="button white" data-toggle="on-page-locations-dropdown">
+													<div class="grid-x align-middle">
+														<span>Team Locations</span>
+														<svg xmlns="http://www.w3.org/2000/svg" width="14.107" height="9.142" viewBox="0 0 14.107 9.142"> <path id="Path_1172" data-name="Path 1172" d="M879.509,3104.144l6,5.962,6-5.962" transform="translate(-878.451 -3103.08)" fill="none" stroke="#000" stroke-width="3"/></svg>
+													</div>
+												</button>
+												<div class="dropdown-pane text-center" id="on-page-locations-dropdown" data-position="bottom" data-alignment="center" data-dropdown data-auto-focus="true">
+													<div class="white-bg">
+														<?php swarm_mobile_locations_nav(); ?>
+													</div>
+												</div>
 											</div>
 											<div class="show-for-tablet">
 												<?php swarm_locations_nav(); ?>

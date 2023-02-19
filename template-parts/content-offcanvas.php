@@ -23,14 +23,7 @@
 				
 						<?php swarm_off_canvas_nav(); ?>
 						
-						<div class="socials-wrap grid-x align-middle align-center">
-							<div class="cell shrink white-color">
-								Socials:
-							</div>
-							<div class="cell shrink">
-								<?php swarm_social_links(); ?>
-							</div>
-						</div>
+						<?php get_template_part('template-parts/content', 'social-links');?>
 					
 	
 						<div class="pc-link-wrap grid-x align-center">

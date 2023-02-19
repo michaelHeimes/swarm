@@ -57,20 +57,6 @@ footer#colophon {
 			padding-bottom: 4.08rem;
 		}
 	}
-	ul.social-links {
-		margin: auto;
-	
-		li {
-			padding: 6px;
-		}
-		a {
-			color: $white;
-			padding: 0;
-			font-size: rem-calc(14);
-			line-height: 1.214;
-			letter-spacing: .1em;
-		}
-	}
 	a.pp-link {
 		color: $white;
 	}
@@ -110,6 +96,26 @@ ul.footer-links {
 			text-transform: uppercase;
 			font-family: $font-body;
 			padding: 0;
+		}
+	}
+}
+
+.socials-wrap {
+	.label-wrap {
+		padding-right: 0;
+	}
+	ul.social-links {
+		margin: auto;
+	
+		li {
+			padding: 6px;
+		}
+		a {
+			color: $white;
+			padding: 0;
+			font-size: rem-calc(14);
+			line-height: 1.214;
+			letter-spacing: .1em;
 		}
 	}
 }
