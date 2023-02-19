@@ -1,12 +1,38 @@
 .prefooter {
+	padding-top: 5.52rem;
 	h2.h3 {
-		color: #707070;
+		color: $dark-gray;
+		font-size: rem-calc(50);
+		line-height: 1.22;
+		margin: 0 .5rem 0 0;
+	}
+	a.ig-link {
+		svg {
+			margin-right: 1.35rem;
+		}
+		span {
+			font-size: rem-calc(15);
+			line-height: 1.4666;
+		}
+	}
+	.partners {
+		h2 {
+			margin-bottom: 3.7rem;
+		}
+	}
+	hr {
+		margin: 4.95rem 0 0;
 	}
 }
 footer#colophon {
-
-	.site-info {
-
+	padding-top: 1.5rem;
+	padding-bottom: 2.75rem;
+	text-align: center;
+	
+	.inner {
+		@include breakpoint(medium down) {
+			justify-content: center;
+		}
 	}
 	
 	.left {
@@ -16,31 +42,81 @@ footer#colophon {
 			}
 		}
 	}
-		
-	ul#footer-links {
+	.footer-links-wrap {
+		justify-content: center;
+		@include breakpoint(tablet) {
+			justify-content: flex-start;
+		}
+	}
+	.footer-link {
+		justify-content: center;
+	}
+	.socials-wrap {
+		justify-content: center;
 		@include breakpoint(medium down) {
 			padding-bottom: 4.08rem;
 		}
+	}
+	ul.social-links {
+		margin: auto;
+	
 		li {
-			a {
-				font-size: rem-calc(14);
-				line-height: rem-calc(19);
-				font-weight: bold;
-				text-transform: uppercase;
-			}
+			padding: 6px;
+		}
+		a {
+			color: $white;
+			padding: 0;
+			font-size: rem-calc(14);
+			line-height: 1.214;
+			letter-spacing: .1em;
 		}
 	}
-	
-	.copyright {
-		margin-bottom: 0;
-		@include breakpoint(medium down) {
-			text-align: center;
+	a.pp-link {
+		color: $white;
+	}
+	.btn-wrap {
+		padding-bottom: 2.2rem;
+		a {
+			width: 100%;
 		}
-		@include breakpoint(tablet) {
-			br {
-				display: none;
-			}
+	}
+	.pc-link-wrap {
+		text-align: center;
+		.img-wrap {
+			padding-bottom: 0.6875rem;
 		}
+		a {
+			display: inline-block;
+		}
+	}
+
+	.site-info {
+		padding-top: 2.85rem;
 	}
 	
 }
+
+.offcanvas-nav,
+ul.footer-links {
+	margin-left: -.8125rem;
+	margin-right: -.8125rem;
+	li {
+		margin: 0 .8125rem .35rem;
+		a {
+			color: $white;
+			font-size: rem-calc(14);
+			line-height: 1.214;
+			letter-spacing: .1em;
+			text-transform: uppercase;
+			font-family: $font-body;
+			padding: 0;
+		}
+	}
+}
+
+.site-info {
+	a {
+		color: $white;
+	}
+}
+

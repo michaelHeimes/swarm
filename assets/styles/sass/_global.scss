@@ -51,6 +51,11 @@ div#page {
 	}
 }
 
+hr {
+	max-width: none;
+	border-color: $dark-gray;
+}
+
 .entry-content:not(.home) {
 	position: relative;
 	z-index: 1;
@@ -483,7 +488,6 @@ FOOTER STYLES
 *********************/
 .footer {
 	clear: both;
-	margin-top: 1em;
 }
 	
 /*********************

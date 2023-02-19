@@ -1,6 +1,9 @@
 .cta-w-bg-img {
 	.inner {
-		min-height: 651px;
+		min-height: 552px;
+		@include breakpoint(medium) {
+			min-height: 651px;
+		}
 		> .cell {
 			padding-top: 4rem;
 			padding-bottom: 4rem;

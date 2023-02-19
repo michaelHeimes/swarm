@@ -21,8 +21,11 @@
 	.right {
 		position: relative;
 		z-index: 1;
-		padding-top: 2rem;
-		padding-bottom: 2rem;
+		padding-top: 3.8rem;
+		@include breakpoint(tablet) {
+			padding-top: 2rem;
+			padding-bottom: 2rem;
+		}
 		
 		h2 {
 			margin-bottom: 3.3rem;

@@ -17,8 +17,8 @@ register_nav_menus(
 function swarm_top_nav() {
 	wp_nav_menu(array(
 		'container'			=> false,						// Remove nav container
-		'menu_id'			=> 'main-nav',					// Adding custom nav id
-		'menu_class'		=> 'medium-horizontal menu',	// Adding custom nav class
+		'menu_id'			=> '',					// Adding custom nav id
+		'menu_class'		=> 'main-nav medium-horizontal menu',	// Adding custom nav class
 		'items_wrap'		=> '<ul id="%1$s" class="%2$s" data-responsive-menu="accordion tablet-dropdown" data-submenu-toggle="true" data-hover-delay="200" data-closing-time="200">%3$s</ul>',
 		'theme_location'	=> 'main-nav',					// Where it's located in the theme
 		'depth'				=> 5,							// Limit the depth of the nav
@@ -33,8 +33,8 @@ function swarm_top_nav() {
 function swarm_mobile_locations_nav() {
 	wp_nav_menu(array(
 		'container'			=> false,						// Remove nav container
-		'menu_id'			=> 'mobile-locations-nav',					// Adding custom nav id
-		'menu_class'		=> 'medium-horizontal menu display-on-load',	// Adding custom nav class
+		'menu_id'			=> '',					// Adding custom nav id
+		'menu_class'		=> 'mobile-locations-nav medium-horizontal menu display-on-load',	// Adding custom nav class
 		'items_wrap'		=> '<ul class="%1$s %2$s" data-responsive-menu="accordion" data-hover-delay="0" data-closing-time="0" style="visibility: hidden;">%3$s</ul>',
 		'theme_location'	=> 'mobile-locations-nav',					// Where it's located in the theme
 		'depth'				=> 4,							// Limit the depth of the nav
@@ -49,8 +49,8 @@ function swarm_mobile_locations_nav() {
 function swarm_locations_nav() {
 	wp_nav_menu(array(
 		'container'			=> false,						// Remove nav container
-		'menu_id'			=> 'locations-nav',					// Adding custom nav id
-		'menu_class'		=> 'medium-horizontal menu display-on-load',	// Adding custom nav class
+		'menu_id'			=> '',					// Adding custom nav id
+		'menu_class'		=> 'locations-nav medium-horizontal menu display-on-load',	// Adding custom nav class
 		'items_wrap'		=> '<ul class="%1$s %2$s" data-hover-delay="0" data-closing-time="0" style="visibility: hidden;" data-accordion-menu>%3$s</ul>',
 		'theme_location'	=> 'locations-nav',					// Where it's located in the theme
 		'depth'				=> 4,							// Limit the depth of the nav
@@ -65,8 +65,8 @@ function swarm_locations_nav() {
 function swarm_locations_page_nav() {
 	wp_nav_menu(array(
 		'container'			=> false,						// Remove nav container
-		'menu_id'			=> 'locations-page-nav',					// Adding custom nav id
-		'menu_class'		=> 'medium-horizontal menu display-on-load',	// Adding custom nav class
+		'menu_id'			=> '',					// Adding custom nav id
+		'menu_class'		=> 'locations-page-nav medium-horizontal menu display-on-load',	// Adding custom nav class
 		'items_wrap'		=> '<ul class="%1$s %2$s" data-responsive-menu="accordion" data-hover-delay="0" data-closing-time="0" style="visibility: hidden;">%3$s</ul>',
 		'theme_location'	=> 'locations-page-nav',					// Where it's located in the theme
 		'depth'				=> 4,							// Limit the depth of the nav
@@ -89,8 +89,8 @@ class Topbar_Menu_Walker extends Walker_Nav_Menu {
 function swarm_off_canvas_nav() {
 	wp_nav_menu(array(
 		'container'			=> false,							// Remove nav container
-		'menu_id'			=> 'offcanvas-nav',					// Adding custom nav id
-		'menu_class'		=> 'menu align-center',	// Adding custom nav class
+		'menu_id'			=> '',					// Adding custom nav id
+		'menu_class'		=> 'offcanvas-nav menu align-center',	// Adding custom nav class
 		'items_wrap'		=> '<ul id="%1$s" class="%2$s">%3$s</ul>',
 		'theme_location'	=> 'offcanvas-nav',					// Where it's located in the theme
 		'depth'				=> 5,								// Limit the depth of the nav
@@ -110,8 +110,8 @@ class Off_Canvas_Menu_Walker extends Walker_Nav_Menu {
 function swarm_footer_links() {
 	wp_nav_menu(array(
 		'container'			=> 'false',				// Remove nav container
-		'menu_id'			=> 'footer-links',		// Adding custom nav id
-		'menu_class'		=> 'menu',				// Adding custom nav class
+		'menu_id'			=> '',		// Adding custom nav id
+		'menu_class'		=> 'footer-links menu',				// Adding custom nav class
 		'theme_location'	=> 'footer-links',		// Where it's located in the theme
 		'depth'				=> 0,					// Limit the depth of the nav
 		'fallback_cb'		=> ''					// Fallback function
@@ -122,8 +122,8 @@ function swarm_footer_links() {
 function swarm_social_links() {
 	wp_nav_menu(array(
 		'container'			=> 'false',				// Remove nav container
-		'menu_id'			=> 'social-links',		// Adding custom nav id
-		'menu_class'		=> 'menu',				// Adding custom nav class
+		'menu_id'			=> '',		// Adding custom nav id
+		'menu_class'		=> 'social-links menu',				// Adding custom nav class
 		'theme_location'	=> 'social-links',		// Where it's located in the theme
 		'depth'				=> 0,					// Limit the depth of the nav
 		'fallback_cb'		=> ''					// Fallback function

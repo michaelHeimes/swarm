@@ -159,7 +159,12 @@ $fields = get_fields();
 											echo '</div>';
 										}?>
 										<div class="on-page-locations-wrap text-left">
-											<?php swarm_locations_nav(); ?>
+											<div class="hide-for-tablet">
+												<?php swarm_mobile_locations_nav(); ?>
+											</div>
+											<div class="show-for-tablet">
+												<?php swarm_locations_nav(); ?>
+											</div>
 										</div>
 									</div>
 								</div>

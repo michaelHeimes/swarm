@@ -169,10 +169,30 @@
                 let imageWidth = image.innerwidth;
                 let maxWindowWidth = 1440;
                 let scale =  window.innerWidth / maxWindowWidth;
+                let mobileScale =  scale * 2;
     
-                if ( window.innerWidth > 900 && window.innerWidth < 1440 ) {
+                if( mobileScale < 1 ) {
+    
+                    if ( window.innerWidth < 640 ) {
+                        image.style.transform = "scale(" + mobileScale + ")";
+                    }
+                    
+                }
+                
+                if( mobileScale < .8 ) {
+                    
+                    if ( window.innerWidth >= 640 && window.innerWidth < 900 ) {
+                        image.style.transform = "scale(" + mobileScale + ")";
+                    }
+                    
+                } else {
+                    image.style.transform = "scale(.8)";
+                }
+    
+                if ( window.innerWidth >= 900 && window.innerWidth < 1440 ) {
                     image.style.transform = "scale(" + scale + ")";
                 }
+                
             }
             
             window.addEventListener("load", adjustScale);
