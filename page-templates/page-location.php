@@ -21,11 +21,18 @@ $theme_color = $fields['theme_color'];
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			
 				<header class="entry-header text-center has-bg">
+					<div class="bg bg-gradient gradient-top"></div>
 					<div class="bg hex hero-bg-hex" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/big-hex.svg);"></div>
 					<div class="grid-container relative">
 						<div class="grid-x grid-padding-x align-bottom">
 							<div class="cell">
-								<h1 class="white-color">Swarm <?php the_title();?></h1>
+								<h1 class="white-color">
+									<?php if( !empty( $fields['alternative_banner_heading'] ) ):?>
+										<?php echo $fields['alternative_banner_heading'];?>
+									<?php else:?>
+										Swarm <?php the_title();?>
+									<?php endif;?>
+								</h1>
 							</div>
 						</div>
 					</div>
@@ -49,7 +56,7 @@ $theme_color = $fields['theme_color'];
 						$loop = new WP_Query($args);
 						
 						if ( $loop->have_posts() ) :?>
-							<section class="events overflow-hidden">
+							<section class="events overflow-hidden has-bg">
 								<div class="grid-container">
 									<div class="grid-x grid-padding-x">
 										<div class="cell small-12">
@@ -87,10 +94,13 @@ $theme_color = $fields['theme_color'];
 																<a class="button" href="<?php echo esc_url( get_permalink() );?>" rel="bookmark">Learn More</a>
 															</div>
 														</div>
+													</div>
+												</div>
 											</article>
 										<?php endwhile;?>
 									</div>
 								</div>
+								<div class="bg bg-gradient gradient-bottom"></div>
 							</section>
 						
 						<?php endif; wp_reset_postdata(); ?>
@@ -106,49 +116,55 @@ $theme_color = $fields['theme_color'];
 						}
 					?>
 					
-					<?php 
-						if( !empty( $fields['image_copy'] ) ) {
-							get_template_part('template-parts/content', 'image-copy',
-								array(
-									'image_copy' => $fields['image_copy'],
-								)
-							);
-						}
-					?>
+					<div class="gradient-section-1 has-bg">
+						<div class="bg bg-gradient gradient-top"></div>
 					
-					<section class="our-team">
-						<div class="grid-container">
-							<div class="grid-x grid-padding-x">
-								<div class="cell small-12 text-center">
-									<h2>Coaching Staff</h2>
-								</div>
-								<div class="cell small-12">
-									<div class="team-cards grid-x grid-padding-x">
-										<?php 
-											$bio_cards = $fields['bio_cards'];
-											if( !empty($bio_cards) ):
-												$row = 1;
-												foreach($bio_cards as $bio_card):
-													$bio_card_fields = $bio_card['bio_card'];
-					
-													$args = array(
-														'theme_color' => $theme_color,
-														'photo' => $bio_card_fields['photo'],
-														'name' => $bio_card_fields['name'],
-														'bio' => $bio_card_fields['bio'],
-														'row' => $row 
-													);
-					
-												get_template_part('template-parts/loop', 'team-card', $args);
-					
-												$row++; endforeach;
-											endif;
-										?>
+						<?php 
+							if( !empty( $fields['image_copy'] ) ) {
+								get_template_part('template-parts/content', 'image-copy',
+									array(
+										'image_copy' => $fields['image_copy'],
+									)
+								);
+							}
+						?>
+						
+						<section class="our-team">
+							<div class="grid-container">
+								<div class="grid-x grid-padding-x">
+									<div class="cell small-12 text-center">
+										<h2>Coaching Staff</h2>
+									</div>
+									<div class="cell small-12">
+										<div class="staff-cards grid-x grid-padding-x">
+											<?php 
+												$bio_cards = $fields['bio_cards'];
+												if( !empty($bio_cards) ):
+													$row = 1;
+													foreach($bio_cards as $bio_card):
+														$bio_card_fields = $bio_card['bio_card'];
+						
+														$args = array(
+															'theme_color' => $theme_color,
+															'photo' => $bio_card_fields['photo'],
+															'name' => $bio_card_fields['name'],
+															'title' => $bio_card_fields['title'],
+															'bio' => $bio_card_fields['bio'],
+															'row' => $row 
+														);
+						
+													get_template_part('template-parts/loop', 'staff-card', $args);
+						
+													$row++; endforeach;
+												endif;
+											?>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</section>
+						</section>
+						<div class="bg bg-gradient gradient-bottom"></div>
+					</div>
 					
 				</div> <!-- end article section -->
 						

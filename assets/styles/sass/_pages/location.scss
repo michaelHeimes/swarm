@@ -1,4 +1,54 @@
 .page-template-page-location {
+	.bg.bg-gradient {
+		position: absolute;
+		z-index: -2;
+		left: 0;
+		right: 0;
+		height: 500px;
+		mix-blend-mode: multiply;
+		opacity: 0.23;
+	}
+		
+	.theme-blue {
+		.bg.bg-gradient {
+			&.gradient-top {
+				top: 0;
+				background: transparent linear-gradient(180deg, $gradient-blue 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+			}
+			&.gradient-bottom {
+				top: auto;
+				bottom: 0;
+				background: transparent linear-gradient(0deg, $gradient-blue 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+			}	
+		}
+	}
+	.theme-red {
+		.bg.bg-gradient {
+			&.gradient-top {
+				top: 0;
+				background: transparent linear-gradient(180deg, $gradient-red 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+			}
+			&.gradient-bottom {
+				top: auto;
+				bottom: 0;
+				background: transparent linear-gradient(0deg, $gradient-red 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+			}	
+		}
+	}
+	.theme-yellow {
+		.bg.bg-gradient {
+			&.gradient-top {
+				top: 0;
+				background: transparent linear-gradient(180deg, $gradient-yellow 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+			}
+			&.gradient-bottom {
+				top: auto;
+				bottom: 0;
+				background: transparent linear-gradient(0deg, $gradient-yellow 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+			}	
+		}
+	}
+	
 	.entry-header {
 		.grid-x {
 			min-height: 31.7365vw;
@@ -177,19 +227,34 @@
 
 	}
 	.cta-w-bg-img {
-		margin-bottom: 9.3125rem;
+		
+	}
+	.gradient-section-1 {
+		padding-top: 9.3125rem;
 	}
 	.img-copy-card {
 		padding-bottom: 4.35rem;
 	}
 	.our-team {
+		@include breakpoint(medium) {
+			padding-bottom: 0.34rem;
+		}
 		h2 {
 			margin-bottom: 5.55rem;
 		}
 	}
-	.team-cards {
-		@include breakpoint(medium) {
+	.staff-cards {
+		justify-content: center;
+		@include breakpoint(large) {
 			justify-content: space-between;
+		}
+		.staff-card {
+			@include breakpoint(tablet) {
+				max-width: 350px;
+			}
+			@include breakpoint(xlarge) {
+				max-width: none;
+			}
 		}
 		.left {
 			padding-top: 1.5rem;

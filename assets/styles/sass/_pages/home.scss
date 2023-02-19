@@ -31,22 +31,38 @@
 		.hero-heading {
 			position: relative;
 			color: $white;
-			padding: 8.32rem 0;
+			padding: 7.32rem 0 2.75rem;
+			
+			@include breakpoint(medium) {
+				padding: 8.32rem 0;
+			}
 
 			h1 {
 				margin: 0;
-				font-size: rem-calc(45);
-				line-height: 1.2;
+				font-size: rem-calc(22);
+				line-height: 1.237;
 				letter-spacing: .04em;
-
-				span {
-					font-size: rem-calc(100);
-					line-height: 1.052;
-					letter-spacing: .02em;
-				}
+				max-width: 80%;
+				margin: auto;
+				text-shadow: 0px 3px 50px #000000;
 				
 				@include breakpoint(medium) {
+					line-height: 1.2;
+					font-size: rem-calc(45);
 				}
+
+				span {
+					font-size: rem-calc(55);
+					line-height: 1;
+					letter-spacing: .02em;
+					
+					@include breakpoint(medium) {
+						font-size: rem-calc(100);
+						line-height: 1.052;
+					}
+					
+				}
+	
 			}
 		}
 		img {

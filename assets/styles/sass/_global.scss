@@ -15,31 +15,17 @@ svg {
 	height: auto;
 }
 
-.has-bg {
-	position: relative;
-	.bg {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background-repeat: no-repeat;
-		
-	&.mask {
-		background: transparent linear-gradient(1deg, #000000 0%, #121212C8 42%, #54545400 100%) 0% 0% no-repeat padding-box;
-		mix-blend-mode: multiply;
-		opacity: 0.31;
-	}
-		
-	}
-}
-
 .bg.hex {
 	filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.45));
-	background-size: 128.3%;
+	background-size: 160vw;
 	@media screen and (min-width: 1410px) {
 		background-size: 1847px;
 	}
+}
+
+div#page {
+	overflow: hidden;
+	width: 100%;
 }
 
 .entry-header {
@@ -71,39 +57,6 @@ svg {
 	padding-top: 6.7rem;
 }
 
-.has-object-fit {
-	position: relative;
-	overflow: hidden;
-	img.object-fit-img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center;
-	}
-	.grid-container {
-		position: relative;
-	}
-}
-
-.overflow-hidden {
-	overflow: hidden;
-}
-
-.h-100 {
-	height: 100%;
-}
-
-.relative {
-	position: relative;
-}
-
-ul.no-dots {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-
 button:not(.staff-modal-trigger),
 .button {
 	//min-width: 178px;
@@ -118,16 +71,6 @@ button:not(.staff-modal-trigger),
 
 .staff-modal-trigger {
 	color: $text-color;	
-}
-
-/*********************
-POSTS & CONTENT STYLES
-*********************/
-.hex-black-bg {
-	background-color: $hex-black;
-}
-.black-bg {
-	background-color: $hex-black;
 }
 
 /*********************

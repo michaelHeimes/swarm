@@ -51,7 +51,7 @@ get_header();
 													'bio' => $bio_card['bio'],
 													);
 													
-													get_template_part('template-parts/loop', 'team-card', $args);
+													get_template_part('template-parts/loop', 'staff-card', $args);
 													
 												?>
 									

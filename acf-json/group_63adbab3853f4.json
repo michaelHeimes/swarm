@@ -1,6 +1,6 @@
 {
     "key": "group_63adbab3853f4",
-    "title": "Staff",
+    "title": "Staff Post",
     "fields": [
         {
             "key": "field_63adbab49a255",
@@ -43,5 +43,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1672329953
+    "modified": 1676760549
 }

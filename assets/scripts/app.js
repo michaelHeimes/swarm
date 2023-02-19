@@ -120,6 +120,23 @@
         });    
     }
     
+    _app.mobile_nav = function() {
+        $(document).on('click', 'a#menu-toggle', function(){
+            
+            if ( $(this).hasClass('clicked') ) {
+                $(this).removeClass('clicked');
+                $('#off-canvas').fadeOut(200);
+            
+            } else {
+            
+                $(this).addClass('clicked');
+                $('#off-canvas').fadeIn(200);
+            
+            }
+            
+        });
+    }
+    
     _app.display_on_load = function() {
         $('.display-on-load').css('visibility', 'visible');
     }
@@ -283,7 +300,9 @@
         // Standard Functions
         _app.foundation_init();
         _app.emptyParentLinks();
-        _app.fixed_nav_hack();
+        // Disable fixed_nav_hack for takeover
+        // _app.fixed_nav_hack();
+        _app.mobile_nav();
         _app.display_on_load();
         
         // Custom Functions

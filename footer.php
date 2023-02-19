@@ -47,7 +47,14 @@
 						<div class="grid-container">
 							<div class="grid-x grid-padding-x">
 								<div class="cell small-12 tablet-auto">
-									<?php swarm_social_links();?>
+									<div class="grid-x grid-padding-x">
+										<div class="cell shrink">
+											Socials:
+										</div>
+										<div class="cell auto">
+											<?php swarm_social_links();?>
+										</div>
+									</div>
 								</div>
 								<div class="cell small-12 tablet-shrink">
 									<small class="white-color">Copyright  &copy; <?php echo date("Y");?>, 3STEP Sports. All Rights Reserved.
