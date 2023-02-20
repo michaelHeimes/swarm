@@ -11,9 +11,9 @@
 		<div class="grid-x grid-padding-x">
 			<div class="cell small-12">
 
-				<div class="inner">
+				<div class="inner grid-x align-center">
 				
-					<?php swarm_mobile_locations_nav(); ?>
+					<?php swarm_locations_nav(); ?>
 				
 					<?php swarm_top_nav();?>
 				

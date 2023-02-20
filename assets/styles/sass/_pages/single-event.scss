@@ -1,0 +1,41 @@
+.single-event {
+	
+	main {
+		padding-top: 0.85rem;
+		padding-bottom: 4.95rem;
+	}
+	
+	.back-link {
+		display: inline-flex;
+		align-items: center;
+		svg {
+			margin-right: 10px;
+		}
+	}
+	
+	.location-wrap.show-for-tablet {
+		padding-bottom: 2.95rem;
+	}
+	
+	.days {
+		color: #000;
+		.day {
+			margin-bottom: 1.25rem;
+		}
+		p.date {
+			color: #000;
+			font-size: rem-calc(26);
+			line-height: 1.1923;
+			margin-bottom: 0.58rem;
+		}
+		.times {
+			li {
+				font-size: rem-calc(21);
+				padding-bottom: 0.3rem;
+			}
+		}
+	}
+	.copy {
+		padding-top: 1.35rem;
+	}
+}

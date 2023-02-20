@@ -16,7 +16,7 @@ header.site-header {
 	
 	@include breakpoint(medium down) { 
 		height: 95px;
-		background-color: $black;
+		//background-color: $black;
 		padding-top: 1.9375rem;
 		padding-bottom: 1.9375rem;
 	}
@@ -319,7 +319,7 @@ header.site-header {
 	}
 	
 	.locations-trigger,
-	.mobile-locations-nav,
+	.locations-nav,
 	.main-nav {
 		align-items: center;
 		text-align: center;
@@ -354,7 +354,10 @@ header.site-header {
 	
 	}
 	
-	.mobile-locations-nav {
+	.locations-nav {
+		li {
+			width: 100%;
+		}
 		> li {
 			&.active,
 			&[aria-expanded="true"] {

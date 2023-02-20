@@ -4,6 +4,10 @@
 		position: relative;
 		z-index: 0;
 		
+		@include breakpoint(medium down) {
+			margin-bottom: 2.55rem;
+		}
+		
 		img {
 			position: absolute;
 			width: 100%;
@@ -13,7 +17,10 @@
 		}
 		
 		.hero-heading {
-			min-height: 59.35vw;
+			min-height: 104vw;
+			@include breakpoint(medium) {
+				min-height: 59.35vw;
+			}
 			@include breakpoint(xxlarge) {
 				min-height: 854px;
 			}
@@ -24,8 +31,13 @@
 		}
 		
 		.bg.img {
-			background-size: 117vw;
-			background-position: 50% 100%;
+			background-size: 170vw;
+			background-position: 50% 140%;
+			
+			@include breakpoint(medium) {
+				background-size: 117vw;
+				background-position: 50% 100%;
+			}
 		}
 		
 		.hero-heading {
@@ -33,7 +45,7 @@
 			color: $white;
 			padding: 7.32rem 0 2.75rem;
 			
-			@include breakpoint(medium) {
+			@include breakpoint(large) {
 				padding: 8.32rem 0;
 			}
 
@@ -46,7 +58,7 @@
 				margin: auto;
 				text-shadow: 0px 3px 50px #000000;
 				
-				@include breakpoint(medium) {
+				@include breakpoint(large) {
 					line-height: 1.2;
 					font-size: rem-calc(45);
 				}
@@ -56,7 +68,7 @@
 					line-height: 1;
 					letter-spacing: .02em;
 					
-					@include breakpoint(medium) {
+					@include breakpoint(large) {
 						font-size: rem-calc(100);
 						line-height: 1.052;
 					}
@@ -86,17 +98,16 @@
 		}
 	
 		.btn-wrap {
-			padding-top: 2.05rem;
+			padding-top: .5rem;
+			@include breakpoint(medium) {
+				padding-top: 2.05rem;
+			}
 		}
 			
 		.three-image-set {
 			position: relative;
 			width: 955px;
 			transform-origin: left;
-			
-			@include breakpoint(medium) {
-				
-			}
 			
 			@include breakpoint(tablet) {
 				padding-left: 2rem;
@@ -134,10 +145,10 @@
 				
 				img {
 					display: block;
-						position: absolute;
-						width: 100%;
-						height: 100%;
-						object-fit: cover;
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
 				}
 				
 	
@@ -150,6 +161,14 @@
 			
 		}
 		
+	}
+	
+	.on-page-locations-wrap {
+		button {
+			span {
+				margin-right: .65rem;
+			}
+		}
 	}
 	
 	.locations {
@@ -178,7 +197,11 @@
 		
 		.on-page-locations-wrap {
 			position: relative;
-			padding: 0 0 6rem;
+			padding: 0 0 3.1rem;
+			
+			@include breakpoint(medium) {
+				padding: 0 0 6rem;
+			}
 			
 			.dropdown-pane {
 				padding: 1rem 0 0;
@@ -193,7 +216,14 @@
 				
 			}
 			
-			.mobile-locations-nav {
+			.locations-nav {
+				visibility: visible !important;
+				width: 100%;
+				
+				li {
+					width: 100%;
+				}
+				
 				a {
 					font-size: rem-calc(18);
 					font-weight: bold;
@@ -222,86 +252,85 @@
 						}
 					}
 				}
-			}
-
-			.locations-nav {
-				visibility: visible !important;
-				width: 100%;
 				
-				a {
-					color: $text-color;
-					padding: 0;
-				}
-			
-				> li {
-					width: 100%;
-					> a {
-						display: none;
+				@include breakpoint(tablet) {
+				
+					a {
+						color: $text-color;
+						padding: 0;
 					}
-					> ul {
-						// position: absolute;	
-						// z-index: 555;
+				
+					> li {
 						width: 100%;
-						margin-left: -1rem;
-						margin-right: -1rem;
-						display: flex !important;
-						justify-content: space-between;
-						
-						> li {
-							padding: 0 1rem;
+						> a {
+							display: none;
 						}
-						
-						a {
-							font-size: rem-calc(20);
-							font-weight: bold;
-							line-height: 1.2;
-						}
-						
-						> li {
-							width: auto;
-							flex: 0 0 0;
-							display: flex;
-							flex-direction: column;
+						> ul {
+							// position: absolute;	
+							// z-index: 555;
+							width: 100%;
+							margin-left: -1rem;
+							margin-right: -1rem;
+							display: flex !important;
+							justify-content: space-between;
 							
-							> a {
-								font-family: $font-heading;
-								font-size: rem-calc(36);
-								text-transform: uppercase;
-								font-weight: bold;				
-								position: relative;
+							> li {
+								padding: 0 1rem;
+							}
+							
+							a {
+								cursor: default;
+								font-size: rem-calc(20);
+								font-weight: bold;
 								line-height: 1.2;
-								color: $heading-white;
-								letter-spacing: 0.03em;
-								margin-bottom: 0.67em;
 							}
 							
-							span {
-								white-space: nowrap;
-							}
-							> ul {
+							> li {
+								width: auto;
+								flex: 0 0 0;
 								display: flex;
 								flex-direction: column;
 								
-								> li {
-									width: 100%;
-									// &.show {
-									// 	ul {
-									// 		height: auto;
-									// 		visibility: visible;
-									// 	}
-									// }
+								> a {
+									font-family: $font-heading;
+									font-size: rem-calc(36);
+									text-transform: uppercase;
+									font-weight: bold;				
+									position: relative;
+									line-height: 1.2;
+									color: $heading-white;
+									letter-spacing: 0.03em;
+									margin-bottom: 0.67em;
+								}
+								
+								span {
+									white-space: nowrap;
+								}
+								> ul {
+									display: flex !important;
+									flex-direction: column;
 									
-									ul {
-										//visibility: hidden;
-										//transition: all .4s ease;
-									&.show {
-										visibility: visible;
-									}
-	
-										a {
-											font-size: rem-calc(18);
-											span {
-												padding-left: 1rem;
+									> li {
+										width: 100%;
+										// &.show {
+										// 	ul {
+										// 		height: auto;
+										// 		visibility: visible;
+										// 	}
+										// }
+										
+										ul {
+											//visibility: hidden;
+											//transition: all .4s ease;
+										&.show {
+											visibility: visible;
+										}
+		
+											a {
+												font-size: rem-calc(18);
+												span {
+													padding-left: 1rem;
+												}
 											}
 										}
 									}
@@ -438,7 +467,12 @@
 	}
 	
 	.testimonials-slider-section {
-		padding-top: 9.34275rem;
+		padding-top: 1.5rem;
+		
+		@include breakpoint(medium) {
+			padding-top: 9.34275rem;
+			padding-bottom: 5.05rem;
+		}
 		
 		&:before {
 			content: '';
@@ -467,11 +501,25 @@
 		}
 		
 		h2 {
-			margin-bottom: 4.58rem;
+			margin-bottom: 1.4rem;
+			
+			@include breakpoint(medium down) {
+				margin-bottom: 4.58rem;
+			}
+			
 		}
 		
 		#testimonials-text-slider {
-			margin-top: 2.3rem;
+			margin-top: 0.55rem;
+			
+			@include breakpoint(medium) {
+				margin-bottom: 2.32rem;
+			}
+			
+			@include breakpoint(medium) {
+				margin-top: 2.3rem;
+			}
+			
 		}
 		
 		p.name {
@@ -479,12 +527,18 @@
 			font-weight: 500;
 		}
 		
+		.testimonials-text-slider-wrap {
+			padding-top: 2.9rem;
+		}
+		
 		.testimonials-text-swiper-pagination {
 			position: relative;
 			z-index: 1;
-			width: 50%;
-			float: right;
-			//margin-top: -3.47rem;
+			text-align: left;
+			
+			@include breakpoint(tablet) {
+				text-align: right;
+			}
 			
 			.swiper-pagination-bullet {
 				display: inline-block;

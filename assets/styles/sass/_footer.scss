@@ -1,5 +1,10 @@
 .prefooter {
-	padding-top: 5.52rem;
+	padding-top: 2.6rem;
+	
+	@include breakpoint(medium) {
+		padding-top: 5.52rem;
+	}
+	
 	h2.h3 {
 		color: $dark-gray;
 		font-size: rem-calc(50);

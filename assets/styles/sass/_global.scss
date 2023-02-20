@@ -45,8 +45,12 @@ div#page {
 	}
 	&.hero {
 		&:before {
-			transform: translate(0%, 65%);
-			background-position: -6% 50%;
+			transform: translate(-50%, 107%);
+			background-position: 0% 50%;
+			@include breakpoint(tablet) {
+				transform: translate(0%, 65%);
+				background-position: -6% 50%;
+			}
 		}
 	}
 }
