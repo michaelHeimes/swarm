@@ -33,7 +33,7 @@ function swarm_locations_nav() {
 	wp_nav_menu(array(
 		'container'			=> false,						// Remove nav container
 		'menu_id'			=> '',					// Adding custom nav id
-		'menu_class'		=> 'locations-nav medium-horizontal menu display-on-load',	// Adding custom nav class
+		'menu_class'		=> 'locations-nav tablet-horizontal accordion-menu menu display-on-load',	// Adding custom nav class
 		'items_wrap'		=> '<ul class="%1$s %2$s" data-hover-delay="0" data-closing-time="0" style="visibility: hidden;" data-accordion-menu>%3$s</ul>',
 		'theme_location'	=> 'locations-nav',					// Where it's located in the theme
 		'depth'				=> 4,							// Limit the depth of the nav

@@ -164,11 +164,7 @@
 	}
 	
 	.on-page-locations-wrap {
-		button {
-			span {
-				margin-right: .65rem;
-			}
-		}
+		
 	}
 	
 	.locations {
@@ -203,143 +199,47 @@
 				padding: 0 0 6rem;
 			}
 			
+			button {
+				span {
+					margin-right: .65rem;
+				}
+			}
+			
 			.dropdown-pane {
-				padding: 1rem 0 0;
+				padding-top: 1rem;
+				
 				.white-bg {
 					border-radius: $global-radius;
 					padding: 1rem 1.5rem .5rem;
 				}
 				
-				li {
-					margin-bottom: .5rem;
-				}
-				
-			}
-			
-			.locations-nav {
-				visibility: visible !important;
-				width: 100%;
-				
-				li {
-					width: 100%;
-				}
-				
-				a {
-					font-size: rem-calc(18);
-					font-weight: bold;
-					color: $text-color;
-					padding: 0;
-				}
-				
-				ul.submenu {
-					padding: 1rem 0 .5rem;
-				}
-				
-				> li {
-				width: 100%;
-					> a {
-						display: none;
-					}
-					> ul {
-						display: block !important;
-						> li {
-							ul > li > ul {
-								a {
-									font-size: rem-calc(16);
-									font-weight: 400;
-								}
-							}
-						}
-					}
-				}
-				
-				@include breakpoint(tablet) {
-				
-					a {
-						color: $text-color;
-						padding: 0;
-					}
-				
+				ul.locations-nav {
+					display: block !important;
+					padding: 1rem 0;
+					
 					> li {
-						width: 100%;
 						> a {
 							display: none;
 						}
 						> ul {
-							// position: absolute;	
-							// z-index: 555;
-							width: 100%;
-							margin-left: -1rem;
-							margin-right: -1rem;
-							display: flex !important;
-							justify-content: space-between;
+							display: block !important;
 							
-							> li {
-								padding: 0 1rem;
-							}
-							
-							a {
-								cursor: default;
-								font-size: rem-calc(20);
-								font-weight: bold;
-								line-height: 1.2;
-							}
-							
-							> li {
-								width: auto;
-								flex: 0 0 0;
-								display: flex;
-								flex-direction: column;
+							>li {
+								margin-bottom: .5rem;
 								
-								> a {
-									font-family: $font-heading;
-									font-size: rem-calc(36);
-									text-transform: uppercase;
-									font-weight: bold;				
-									position: relative;
-									line-height: 1.2;
-									color: $heading-white;
-									letter-spacing: 0.03em;
-									margin-bottom: 0.67em;
+								ul {
+									padding: .5rem 0;
 								}
 								
-								span {
-									white-space: nowrap;
-								}
-								> ul {
-									display: flex !important;
-									flex-direction: column;
-									
-									> li {
-										width: 100%;
-										// &.show {
-										// 	ul {
-										// 		height: auto;
-										// 		visibility: visible;
-										// 	}
-										// }
-										
-										ul {
-											//visibility: hidden;
-											//transition: all .4s ease;
-										&.show {
-											visibility: visible;
-										}
-		
-											a {
-												font-size: rem-calc(18);
-												span {
-													padding-left: 1rem;
-												}
-											}
-										}
-									}
-								}
 							}
 						}
 					}
+
 				}
+				
 			}
+			
+
 		}
 	}
 	

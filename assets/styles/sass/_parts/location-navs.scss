@@ -1,0 +1,127 @@
+.locations-nav.accordion-menu {
+	visibility: visible !important;
+	width: 100%;
+	
+	li {
+		width: 100%;
+	}
+	
+	a {
+		font-size: rem-calc(18);
+		font-weight: bold;
+		color: $text-color;
+		padding: 0;
+	}
+		
+	> li {
+	width: 100%;
+		> ul {
+			> li {
+				ul > li > ul {
+					padding: .3rem 0;
+					
+					a {
+						font-size: rem-calc(16);
+						font-weight: 700;
+					}
+				}
+			}
+		}
+	}
+	
+	@include breakpoint(tablet) {
+
+		a {
+			color: $text-color;
+			padding: 0;
+		}
+		
+		li.is-accordion-submenu a,
+		a {
+			padding: 0;
+		}
+	
+		> li {
+			width: 100%;
+			> a {
+				display: none;
+			}
+			> ul {
+				// position: absolute;	
+				// z-index: 555;
+				width: 100%;
+				margin-left: -1rem;
+				margin-right: -1rem;
+				display: flex !important;
+				justify-content: space-between;
+				
+				> li {
+					padding: 0 1rem;
+					> a {
+						cursor: default;
+					}
+				}
+				
+				a {
+					font-size: rem-calc(20);
+					font-weight: bold;
+					line-height: 1.2;
+				}
+				
+				> li {
+					width: auto;
+					flex: 0 0 0;
+					display: flex;
+					flex-direction: column;
+					
+					> a {
+						font-family: $font-heading;
+						font-size: rem-calc(36);
+						text-transform: uppercase;
+						font-weight: bold;				
+						position: relative;
+						line-height: 1.2;
+						color: $heading-white;
+						letter-spacing: 0.03em;
+						margin-bottom: 0.52rem;
+					}
+					
+					span {
+						white-space: nowrap;
+					}
+					> ul {
+						display: flex !important;
+						flex-direction: column;
+						
+						> li {
+							width: 100%;
+							// &.show {
+							// 	ul {
+							// 		height: auto;
+							// 		visibility: visible;
+							// 	}
+							// }
+							
+							ul {
+								//visibility: hidden;
+								//transition: all .4s ease;
+							&.show {
+								visibility: visible;
+							}
+
+								a {
+									font-weight: bold;
+									font-size: rem-calc(18);
+									padding: .12rem;
+									span {
+										padding-left: .75rem;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -19,3 +19,12 @@ p,
 .white-color {
 	color: $heading-white;
 }
+
+.name {
+	font-size: rem-calc(30);
+	line-height: .8444;
+}
+
+.job-title {
+	font-size: rem-calc(20);
+}

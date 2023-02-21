@@ -39,7 +39,7 @@ $archive_link = get_term_link($first_term);
 						<h3><?php echo $location_name;?> Swarm</h3>
 					<?php endif;?>
 					
-					<?php the_title( '<h1 class="entry-title">', '</h1>' );?>
+					<?php the_title( '<h1 class="entry-title h2">', '</h1>' );?>
 				
 					<?php if( $location = $fields['location'] ):?>
 						<div class="location-wrap hide-for-tablet">
@@ -106,7 +106,7 @@ $archive_link = get_term_link($first_term);
 					}?>
 				</div>
 				<?php if($copy = $fields['copy']):?>
-					<div class="copy hide-for-tablet">
+					<div class="copy cell small-12 hide-for-tablet">
 						<?php echo $copy;?>
 					</div>
 				<?php endif;?>

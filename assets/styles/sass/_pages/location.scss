@@ -49,21 +49,6 @@
 		}
 	}
 	
-	.entry-header {
-		.grid-x {
-			min-height: 31.7365vw;
-			padding-top: 5.3rem;
-			padding-top: 13rem;
-			padding-bottom: 5.3rem;
-			@include breakpoint(xxlarge) {
-				min-height: 457px;
-			}
-		}
-		.bg {
-			z-index: -1;
-			background-position: 50% 100%;
-		}
-	}
 	.events {
 		padding-bottom: 5.12rem;
 		
@@ -285,24 +270,6 @@
 		}
 		h2 {
 			margin-bottom: 5.55rem;
-		}
-	}
-	.staff-cards {
-		justify-content: center;
-		@include breakpoint(large) {
-			justify-content: space-between;
-		}
-		.staff-card {
-			@include breakpoint(tablet) {
-				max-width: 350px;
-			}
-			@include breakpoint(xlarge) {
-				max-width: none;
-			}
-		}
-		.left {
-			padding-top: 1.5rem;
-			padding-bottom: 1.5rem;
 		}
 	}
 }

@@ -30,7 +30,7 @@ $theme_color = $fields['theme_color'];
 									<?php if( !empty( $fields['alternative_banner_heading'] ) ):?>
 										<?php echo $fields['alternative_banner_heading'];?>
 									<?php else:?>
-										Swarm <?php the_title();?>
+										<?php the_title();?>
 									<?php endif;?>
 								</h1>
 							</div>
@@ -140,7 +140,6 @@ $theme_color = $fields['theme_color'];
 											<?php 
 												$bio_cards = $fields['bio_cards'];
 												if( !empty($bio_cards) ):
-													$row = 1;
 													foreach($bio_cards as $bio_card):
 														$bio_card_fields = $bio_card['bio_card'];
 						
@@ -150,12 +149,11 @@ $theme_color = $fields['theme_color'];
 															'name' => $bio_card_fields['name'],
 															'title' => $bio_card_fields['title'],
 															'bio' => $bio_card_fields['bio'],
-															'row' => $row 
 														);
 						
 													get_template_part('template-parts/loop', 'staff-card', $args);
 						
-													$row++; endforeach;
+													endforeach;
 												endif;
 											?>
 										</div>

@@ -3,6 +3,30 @@
     "title": "Staff Post",
     "fields": [
         {
+            "key": "field_63f3a22133475",
+            "label": "Theme Color",
+            "name": "theme_color",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "blue": "Blue",
+                "red": "Red",
+                "yellow": "Yellow"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
             "key": "field_63adbab49a255",
             "label": "Staff Member",
             "name": "staff_member",
@@ -43,5 +67,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1676760549
+    "modified": 1676911165
 }

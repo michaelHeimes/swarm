@@ -3,9 +3,6 @@
 Stylesheet: Global Stylesheet
 
 *************************************************/
-/*********************
-BACKGROUND COLORS
-*********************/
 
 /*********************
 RE-USED ELEMENTS
@@ -53,6 +50,25 @@ div#page {
 			}
 		}
 	}
+	
+	&:not(.hero) {
+		.bg {
+			z-index: -1;
+			background-position: 50% 100%;
+		}
+		
+		.grid-x {
+			min-height: 31.7365vw;
+			padding-top: 5.3rem;
+			padding-top: 13rem;
+			padding-bottom: 5.3rem;
+			@include breakpoint(xxlarge) {
+				min-height: 457px;
+			}
+		}
+	
+	}
+	
 }
 
 hr {
@@ -66,7 +82,7 @@ hr {
 	padding-top: 6.7rem;
 }
 
-button:not(.staff-modal-trigger),
+button:not(.staff-modal-trigger):not(.close-button),
 .button {
 	min-width: 178px;
 	text-transform: uppercase;
