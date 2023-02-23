@@ -86,7 +86,7 @@ get_header();
 													</div>
 												</div>
 												<div class="right cell auto">
-													<div class="red-hex-img-wrap hex-img-wrap">
+													<div class="red-hex-img-wrap hex-img-wrap display-on-image-load">
 														<?php if( !empty( $photo ) ) {
 															$imgID = $photo['ID'];
 															$img_alt = trim( strip_tags( get_post_meta( $imgID, '_wp_attachment_image_alt', true ) ) );

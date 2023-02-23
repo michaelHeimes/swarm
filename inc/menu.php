@@ -5,7 +5,7 @@ register_nav_menus(
 		'main-nav'		=> __( 'The Main Menu', 'swarm' ),
 		'locations-nav'		=> __( 'The Locations Menu', 'swarm' ),
 		'locations-page-nav'		=> __( 'The Locations On-page Menu', 'swarm' ),
-		'offcanvas-nav'	=> __( 'The Off-Canvas Menu', 'swarm' ),
+		// 'offcanvas-nav'	=> __( 'The Off-Canvas Menu', 'swarm' ),
 		'footer-links'	=> __( 'Footer Links', 'swarm' ),
 		'social-links'	=> __( 'Social Links', 'swarm' ),
 	)
