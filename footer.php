@@ -23,7 +23,15 @@
 							
 							<div class="pc-link-wrap cell shrink">
 								<div class="hide-for-tablet btn-wrap">
-									<a class="button white" href="#">Subscribe</a>
+									<?php 
+									$link = get_field('subscribe_link', 'option');
+									if( $link ): 
+										$link_url = $link['url'];
+										$link_title = $link['title'];
+										$link_target = $link['target'] ? $link['target'] : '_self';
+										?>
+										<a class="button white" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+									<?php endif; ?>
 								</div>
 								<?php 
 								$link = get_field('parent_company_link', 'option');
@@ -58,17 +66,7 @@
 									<?php get_template_part('template-parts/content', 'social-links');?>
 								</div>
 								<div class="cell small-12 tablet-shrink">
-									<small class="white-color">Copyright  &copy; <?php echo date("Y");?>, 3STEP Sports. All Rights Reserved.
-									<?php 
-									$link = get_field('privacy_policy', 'option');
-									if( $link ): 
-										$link_url = $link['url'];
-										$link_title = $link['title'];
-										$link_target = $link['target'] ? $link['target'] : '_self';
-										?>
-										- <a class="pp-link" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-									<?php endif; ?>
-									</small>
+									<small class="white-color">Copyright  &copy; <?php echo date("Y");?>, 3STEP Sports. All Rights Reserved.</small>
 								</div>
 								<div class="cell small-12 tablet-auto text-right">
 									<small class="white-color uppercase show-for-tablet">Powered By 3STEP Sports</small>

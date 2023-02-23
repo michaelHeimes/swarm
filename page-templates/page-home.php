@@ -46,96 +46,16 @@ $fields = get_fields();
 				
 					<div class="entry-content home" itemprop="text">
 						
-						<section class="copy-three-image-set">
-							<div class="grid-container">
-								<div class="grid-x grid-padding-x align-middle">
-									<div class="copy-wrap cell small-12 tablet-6 large-5">
-										<?php echo $fields['ctis_copy'];?>
-										<?php 
-										$link = $fields['ctis_button_link'];
-										if( $link ): 
-											$link_url = $link['url'];
-											$link_title = $link['title'];
-											$link_target = $link['target'] ? $link['target'] : '_self';
-											?>
-										<div class="btn-wrap">
-											<a class="button" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-										</div>
-										<?php endif; ?>
-									</div>
-									<div class="cell small-12 tablet-6 large-6 large-offset-1">
-										<div class="three-image-set grid-x grid-padding-x align-middle fixed-width-half">
-											<div class="left cell small-6">
-												<?php 
-												$image = $fields['ctis_red_background_image'];
-												if( !empty( $image ) ): ?>
-												<div class="red-hex-img-wrap hex-img-wrap">
-													<div class="hex-img red-img">
-				
-														<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-													</div>
-													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="452.265" height="391.494" viewBox="0 0 452.265 391.494">
-									  				<defs>
-														<linearGradient id="ctis_red_linear-gradient" x1="0.755" y1="0.051" x2="0.175" y2="0.93" gradientUnits="objectBoundingBox">
-										  				<stop offset="0" stop-color="#c00"/>
-										  				<stop offset="0.216" stop-color="#e5403b"/>
-										  				<stop offset="1" stop-color="#fefefe" stop-opacity="0"/>
-														</linearGradient>
-									  				</defs>
-									  				<path id="Picture17" d="M321.882,0A30,30,0,0,1,347.86,14.995L443.6,180.742a30,30,0,0,1,0,30.01L347.86,376.5a30,30,0,0,1-25.978,14.995h-191.5A30,30,0,0,1,104.4,376.5L8.667,210.752a30,30,0,0,1,0-30.01L104.4,14.995A30,30,0,0,1,130.383,0Z" fill="url(#ctis_red_linear-gradient)"/>
-													</svg>
-												</div>
-												<?php endif; ?>
-											</div>
-											
-											<div class="right cell small-6">
-												<?php 
-												$image = $fields['ctis_yellow_background_image'];
-												if( !empty( $image ) ): ?>
-												<div class="yellow-hex-img-wrap hex-img-wrap">
-													<div class="hex-img yellow-img">
-												
-														<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-													</div>
-													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="452.265" height="391.494" viewBox="0 0 452.265 391.494">
-									  				<defs>
-														<linearGradient id="ctis_yellow_linear-gradient" x1="0.755" y1="0.051" x2="0.175" y2="0.93" gradientUnits="objectBoundingBox">
-										  				<stop offset="0" stop-color="#fdd81d"/>
-										  				<stop offset="1" stop-color="#fefefe" stop-opacity="0"/>
-														</linearGradient>
-									  				</defs>
-									  				<path id="Picture17" d="M321.882,0A30,30,0,0,1,347.86,14.995L443.6,180.742a30,30,0,0,1,0,30.01L347.86,376.5a30,30,0,0,1-25.978,14.995h-191.5A30,30,0,0,1,104.4,376.5L8.667,210.752a30,30,0,0,1,0-30.01L104.4,14.995A30,30,0,0,1,130.383,0Z" fill="url(#ctis_yellow_linear-gradient)"/>
-													</svg>
-				
-												</div>
-												<?php endif; ?>
-				
-												<?php 
-												$image = $fields['ctis_blue_background_image'];
-												if( !empty( $image ) ): ?>
-												<div class="blue-hex-img-wrap hex-img-wrap">
-													<div class="hex-img blue-img">
-												
-														<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-													</div>
-													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="452.265" height="391.494" viewBox="0 0 452.265 391.494">
-									  				<defs>
-														<linearGradient id="ctis_blue_linear-gradient" x1="0.755" y1="0.051" x2="0.175" y2="0.93" gradientUnits="objectBoundingBox">
-										  				<stop offset="0" stop-color="#62c6f2"/>
-										  				<stop offset="1" stop-color="#fefefe" stop-opacity="0"/>
-														</linearGradient>
-									  				</defs>
-									  				<path id="Picture17" d="M321.882,0A30,30,0,0,1,347.86,14.995L443.6,180.742a30,30,0,0,1,0,30.01L347.86,376.5a30,30,0,0,1-25.978,14.995h-191.5A30,30,0,0,1,104.4,376.5L8.667,210.752a30,30,0,0,1,0-30.01L104.4,14.995A30,30,0,0,1,130.383,0Z" fill="url(#ctis_blue_linear-gradient)"/>
-													</svg>
-				
-												</div>
-												<?php endif; ?>		
-											</div>						
-										</div>
-									</div>
-								</div>
-							</div>
-						</section>
+						<?php 
+							if( !empty($fields['copy_three-image_set']) ) {
+								$copy_three_image_set = $fields['copy_three-image_set'];
+								get_template_part('template-parts/content', 'copy-three-img-set',
+									array(
+										'copy_three-image_set' => $copy_three_image_set,
+									)
+								);
+							}
+						?>
 						
 						<section class="locations has-bg">
 							<div class="bg hex" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/big-hex.svg);"></div>
@@ -167,12 +87,12 @@ $fields = get_fields();
 													</div>
 												</button>
 												<div class="dropdown-pane text-center" id="on-page-locations-dropdown" data-position="bottom" data-alignment="center" data-dropdown data-auto-focus="true">
-													<div class="white-bg">
+													<div class="white-bg display-on-load">
 														<?php swarm_locations_nav(); ?>
 													</div>
 												</div>
 											</div>
-											<div class="show-for-tablet">
+											<div class="show-for-tablet display-on-load">
 												<?php swarm_locations_nav(); ?>
 											</div>
 										</div>
@@ -196,26 +116,14 @@ $fields = get_fields();
 							<div class="grid-container">
 								<div class="grid-x grid-padding-x relative align-middle">
 									<div class="cell small-12 tablet-6">
-										<?php if ($testimonial_slides = $fields['testimonials_slider']):?>
-										<div id="testimonials-img-slider" class="overflow-hidden">
-											<div class="swiper-wrapper">
-												<?php foreach($testimonial_slides as $testimonial_slide):?>
-												<div class="cell swiper-slide">
-													<div class="photo-wrap">
-														<?php if( !empty( $testimonial_slide['photo'] ) ) {
-															$imgID = $testimonial_slide['photo']['ID'];
-															$img_alt = trim( strip_tags( get_post_meta( $imgID, '_wp_attachment_image_alt', true ) ) );
-															$img = wp_get_attachment_image( $imgID, 'half-container', false, [ "class" => "", "alt"=>$img_alt] );
-															echo '<div class="img-wrap">';
-															echo $img;
-															echo '</div>';
-														}?>
-													</div>
-												</div>
-												<?php endforeach;?>
-											</div>
-										</div>
-										<?php endif;?>
+										<?php if( !empty( $fields['ts_image'] ) ) {
+											$imgID = $fields['ts_image']['ID'];
+											$img_alt = trim( strip_tags( get_post_meta( $imgID, '_wp_attachment_image_alt', true ) ) );
+											$img = wp_get_attachment_image( $imgID, 'half-container', false, [ "class" => "", "alt"=>$img_alt] );
+											echo '<div class="img-wrap">';
+											echo $img;
+											echo '</div>';
+										}?>
 									</div>
 										
 									<div class="testimonials-text-slider-wrap cell small-12 tablet-6 large-5 large-offset-1">

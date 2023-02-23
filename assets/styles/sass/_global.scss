@@ -12,11 +12,88 @@ svg {
 	height: auto;
 }
 
+.display-on-load {
+	visibility: hidden;
+}
+
+.display-on-image-load {
+	opacity: 0;
+	transition: opacity .3s ease;
+	
+&.show {
+	opacity: 1;
+}
+	
+}
+
 .bg.hex {
 	filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.45));
 	background-size: 160vw;
-	@media screen and (min-width: 1410px) {
+	@include breakpoint(large) {
 		background-size: 1847px;
+	}
+}
+
+.bg.bg-gradient {
+	position: absolute;
+	z-index: -2;
+	left: 0;
+	right: 0;
+	height: 500px;
+	mix-blend-mode: multiply;
+	opacity: 0.23;
+	
+	&.gradient-top {
+		top: 0;
+		bottom: auto;
+		transform: translateY(-40%);
+	}
+	
+	&.gradient-bottom {
+		top: auto;
+		bottom: 0;
+		transform: translateY(40%);
+	}
+}
+	
+.theme-blue {
+	.bg.bg-gradient {
+		&.gradient-top {
+			background: transparent linear-gradient(180deg, $gradient-blue 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+		}
+		&.gradient-bottom {
+			background: transparent linear-gradient(0deg, $gradient-blue 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+		}	
+	}
+}
+.theme-red {
+	.bg.bg-gradient {
+		&.gradient-top {
+			background: transparent linear-gradient(180deg, $gradient-red 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+		}
+		&.gradient-bottom {
+			background: transparent linear-gradient(0deg, $gradient-red 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+		}	
+	}
+}
+.theme-yellow {
+	.bg.bg-gradient {
+		&.gradient-top {
+			background: transparent linear-gradient(180deg, $gradient-yellow 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+		}
+		&.gradient-bottom {
+			background: transparent linear-gradient(0deg, $gradient-yellow 0%, #FEFEFE00 100%) 0% 0% no-repeat padding-box;
+		}	
+	}
+}
+
+.hero {
+	.bg.bg-gradient {
+		&.gradient-top {
+			top: auto;
+			bottom: 0;
+			transform: translateY(0);
+		}
 	}
 }
 
@@ -82,10 +159,16 @@ hr {
 	padding-top: 6.7rem;
 }
 
-button:not(.staff-modal-trigger):not(.close-button),
+button,
 .button {
+	cursor: pointer;
+}
+
+button:not(.staff-modal-trigger):not(.close-button):not(.no-min-width),
+.button:not(.no-min-width) {
 	min-width: 178px;
 	text-transform: uppercase;
+	text-decoration: none;
 	
 &.white {
 	background-color: $white;

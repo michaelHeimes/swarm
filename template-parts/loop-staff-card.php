@@ -7,11 +7,7 @@
 	$name_slug = slugify($name);
 	$title = $args['title'];
 	$bio = $args['bio'];
-	$row = $args['row'];
-	
-	$card_breaks = '';
-	
-	$three_wide = '';
+	$row = $args['row']; 
 	
 	if( is_page_template('page-templates/page-location.php') ) {
 		$three_wide = true;
@@ -42,7 +38,7 @@
 				</div>
 			</div>
 			<div class="right cell <?php if( $three_wide == false ) { echo 'small-12'; } else { echo 'auto';};?>">
-				<div class="red-hex-img-wrap hex-img-wrap">
+				<div class="red-hex-img-wrap hex-img-wrap display-on-image-load">
 					
 					<?php if( !empty( $image ) ) {
 						$imgID = $image['ID'];
@@ -56,25 +52,25 @@
 					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="220.103" height="190.527" viewBox="0 0 220.103 190.527">
 				  	<defs>
 						  <?php if( $theme_color == 'blue' ):?>
-						<linearGradient id="linear-gradient-<?php echo $row;?>" x1="0.755" y1="0.051" x2="0.175" y2="0.93" gradientUnits="objectBoundingBox">
+						<linearGradient id="linear-gradient-<?php if( !empty($row) ) { echo $row; }?>" x1="0.755" y1="0.051" x2="0.175" y2="0.93" gradientUnits="objectBoundingBox">
 					  	<stop offset="0" stop-color="#62c6f2"/>
 					  	<stop offset="1" stop-color="#fefefe" stop-opacity="0"/>
 						</linearGradient>
 						<?php endif;?>
 						<?php if( $theme_color == 'red' ):?>
-							<linearGradient id="linear-gradient-<?php echo $row;?>" x1="0.755" y1="0.051" x2="0.175" y2="0.93" gradientUnits="objectBoundingBox">
+							<linearGradient id="linear-gradient-<?php if( !empty($row) ) { echo $row; }?>" x1="0.755" y1="0.051" x2="0.175" y2="0.93" gradientUnits="objectBoundingBox">
 							  <stop offset="0" stop-color="#c00"/>
 							  <stop offset="1" stop-color="#fefefe" stop-opacity="0"/>
 							</linearGradient>
 						<?php endif;?>
 						<?php if( $theme_color == 'yellow' ):?>
-							<linearGradient id="linear-gradient-<?php echo $row;?>" x1="0.755" y1="0.051" x2="0.175" y2="0.93" gradientUnits="objectBoundingBox">
+							<linearGradient id="linear-gradient-<?php if( !empty($row) ) { echo $row; }?>" x1="0.755" y1="0.051" x2="0.175" y2="0.93" gradientUnits="objectBoundingBox">
 							  <stop offset="0" stop-color="#FDD81D"/>
 							  <stop offset="1" stop-color="#fefefe" stop-opacity="0"/>
 							</linearGradient>
 						<?php endif;?>
 				  	</defs>
-				  	<path id="Picture17" d="M159.305,0a10,10,0,0,1,8.659,5l49.25,85.264a10,10,0,0,1,0,10l-49.25,85.264a10,10,0,0,1-8.659,5H60.8a10,10,0,0,1-8.659-5L2.889,100.265a10,10,0,0,1,0-10L52.139,5A10,10,0,0,1,60.8,0Z" fill="url(#linear-gradient-<?php echo $row;?>)"/>
+				  	<path id="Picture17" d="M159.305,0a10,10,0,0,1,8.659,5l49.25,85.264a10,10,0,0,1,0,10l-49.25,85.264a10,10,0,0,1-8.659,5H60.8a10,10,0,0,1-8.659-5L2.889,100.265a10,10,0,0,1,0-10L52.139,5A10,10,0,0,1,60.8,0Z" fill="url(#linear-gradient-<?php if( !empty($row) ) { echo $row; }?>)"/>
 					</svg>
 				</div>
 			</div>
@@ -106,25 +102,25 @@
 							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="213.801" height="185.072" viewBox="0 0 213.801 185.072">
 						  	<defs>
 								<?php if( $theme_color == 'blue' ):?>
-								<linearGradient id="linear-gradient-<?php echo $row;?>" x1="0.755" y1="0.051" x2="0.175" y2="0.93" gradientUnits="objectBoundingBox">
+								<linearGradient id="linear-gradient-<?php if( !empty($row) ) { echo $row; }?>" x1="0.755" y1="0.051" x2="0.175" y2="0.93" gradientUnits="objectBoundingBox">
 								<stop offset="0" stop-color="#62c6f2"/>
 								<stop offset="1" stop-color="#fefefe" stop-opacity="0"/>
 								</linearGradient>
 								<?php endif;?>
 								<?php if( $theme_color == 'red' ):?>
-									<linearGradient id="linear-gradient-<?php echo $row;?>" x1="0.755" y1="0.051" x2="0.175" y2="0.93" gradientUnits="objectBoundingBox">
+									<linearGradient id="linear-gradient-<?php if( !empty($row) ) { echo $row; }?>" x1="0.755" y1="0.051" x2="0.175" y2="0.93" gradientUnits="objectBoundingBox">
 									  <stop offset="0" stop-color="#c00"/>
 									  <stop offset="1" stop-color="#fefefe" stop-opacity="0"/>
 									</linearGradient>
 								<?php endif;?>
 								<?php if( $theme_color == 'yellow' ):?>
-									<linearGradient id="linear-gradient-<?php echo $row;?>" x1="0.755" y1="0.051" x2="0.175" y2="0.93" gradientUnits="objectBoundingBox">
+									<linearGradient id="linear-gradient-<?php if( !empty($row) ) { echo $row; }?>" x1="0.755" y1="0.051" x2="0.175" y2="0.93" gradientUnits="objectBoundingBox">
 										<stop offset="0" stop-color="#FDD81D"/>
 										<stop offset="1" stop-color="#fefefe" stop-opacity="0"/>
 									</linearGradient>
 								<?php endif;?>
 						  	</defs>
-						  	<path id="Picture17" d="M154.579,0a10,10,0,0,1,8.659,5l47.674,82.536a10,10,0,0,1,0,10l-47.674,82.536a10,10,0,0,1-8.659,5H59.222a10,10,0,0,1-8.659-5L2.889,97.538a10,10,0,0,1,0-10L50.563,5a10,10,0,0,1,8.659-5Z" fill="url(#linear-gradient-<?php echo $row;?>)"/>
+						  	<path id="Picture17" d="M154.579,0a10,10,0,0,1,8.659,5l47.674,82.536a10,10,0,0,1,0,10l-47.674,82.536a10,10,0,0,1-8.659,5H59.222a10,10,0,0,1-8.659-5L2.889,97.538a10,10,0,0,1,0-10L50.563,5a10,10,0,0,1,8.659-5Z" fill="url(#linear-gradient-<?php if( !empty($row) ) { echo $row; }?>)"/>
 							</svg>
 						</div>
 						<div class="text-center">

@@ -82,6 +82,9 @@
 // Swiper
 //@prepros-prepend vendor/swiper-bundle.js
 
+// Images Loaded
+//@prepros-prepend vendor/imagesloaded.pkgd.js
+
 // DOM Ready
 (function($) {
 	'use strict';
@@ -141,6 +144,15 @@
         $('.display-on-load').css('visibility', 'visible');
     }
     
+    _app.display_on_image_load = function() {
+        $('.display-on-image-load').each( function() {
+            let $this = $(this);
+            $(this).imagesLoaded( function() {
+                $($this).addClass('show');
+            });
+        });
+    }
+    
     // Custom Functions
     
     _app.mobile_takover_nav = function() {
@@ -160,12 +172,12 @@
         });
     }
     
-    _app.fixed_width_half = function () {
+    _app.three_img_set = function () {
         
-        if( $('.fixed-width-half').length ) {
+        if( $('.three-image-set').length ) {
             const adjustScale = function() {
     
-                let image = document.querySelector(".fixed-width-half");
+                let image = document.querySelector(".three-image-set");
                 let imageWidth = image.innerwidth;
                 let maxWindowWidth = 1440;
                 let scale =  window.innerWidth / maxWindowWidth;
@@ -191,6 +203,11 @@
     
                 if ( window.innerWidth >= 900 && window.innerWidth < 1440 ) {
                     image.style.transform = "scale(" + scale + ")";
+                } 
+                
+                if ( window.innerWidth >= 1440 ) {
+                    image.style.transform = "scale(1)";
+                    
                 }
                 
             }
@@ -205,19 +222,8 @@
     _app.testimonials_slider = function() {
         if( $('body').hasClass('home') ) {
             
-            const testimonialsSlides = document.querySelectorAll('#testimonials-img-slider .swiper-slide').length;
+            const testimonialsSlides = document.querySelectorAll('#testimonials-text-slider .swiper-slide').length;
             if ( testimonialsSlides > 1 ) {
-
-                const testimonialsSwiperImg = new Swiper("#testimonials-img-slider", {
-                    slidesPerView: 1,
-                    spaceBetween: 0,
-                    loop: true,
-                    loopAdditionalSlides: testimonialsSlides,
-                    effect: 'fade',
-                        fadeEffect: {
-                        crossFade: true
-                    },
-                });
                 
                 const testimonialsSwiperText = new Swiper("#testimonials-text-slider", {
                     slidesPerView: 1,
@@ -233,13 +239,42 @@
                         },
                     },
                 });
-                
-                testimonialsSwiperImg.controller.control = testimonialsSwiperText;
-                testimonialsSwiperText.controller.control = testimonialsSwiperImg;
+
             }
         }
     }
     
+    _app.footer_social_slider = function() {
+        if( $('.prefooter .social').length ) {
+            
+            let sbiImages = $('#sbi_images');
+            let sbiImage = $('#sbi_images .sbi_item');
+            
+            $(sbiImage).addClass('swiper-slide');
+            $(sbiImage).wrapAll( "<div class='swiper-wrapper' />");
+    
+            let footerIGSwiper = new Swiper(".prefooter .social #sbi_images", {
+                slidesPerView: 1,
+                spaceBetween: 24,
+                freeMode: true,
+                grabCursor: true,
+                centeredSlides: true,
+                initialSlide: 1,
+                breakpoints: {
+                  640: {
+                    slidesPerView: 2,
+                    initialSlide: 1,
+                    centeredSlides: false,
+                  },
+                  900: {
+                    slidesPerView: 5,
+                    initialSlide: 0,
+                    centeredSlides: false,
+                  },
+                },
+            });            
+        }
+    }
             
     _app.init = function() {
         
@@ -250,10 +285,12 @@
         // _app.fixed_nav_hack();
         _app.mobile_nav();
         _app.display_on_load();
+        _app.display_on_image_load();
         
         // Custom Functions
-        _app.fixed_width_half();
+        _app.three_img_set();
         _app.testimonials_slider();
+        _app.footer_social_slider();
     }
     
     

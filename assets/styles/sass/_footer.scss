@@ -1,5 +1,15 @@
+.footer,
+footer {
+	position: relative;
+	z-index: 1;
+}
+
 .prefooter {
 	padding-top: 2.6rem;
+	
+	@include breakpoint(medium down) {
+		text-align: center;
+	}
 	
 	@include breakpoint(medium) {
 		padding-top: 5.52rem;
@@ -11,28 +21,86 @@
 		line-height: 1.22;
 		margin: 0 .5rem 0 0;
 	}
+	.social {
+		padding-bottom: 1.3rem;
+		@include breakpoint(medium) {
+			padding-bottom: 5.6rem;
+		}
+		.feed-wrap {
+			padding-top: 2.15rem;
+			.inner {
+				@include breakpoint(medium down) {
+					width: 60vw;
+					margin: auto;
+				}
+			}
+		}
+	}
 	a.ig-link {
 		svg {
-			margin-right: 1.35rem;
+			margin-right: .55rem;
 		}
 		span {
 			font-size: rem-calc(15);
 			line-height: 1.4666;
 		}
+		.grid-x {
+			@include breakpoint(medium down) {
+				margin-top: .2rem;
+				justify-content: center;
+			}
+		}
+	}
+	#sb_instagram {
+		//min-width: 1160px;
+		margin-left: 0;
+		margin-right: -12px;
+		@include breakpoint(tablet) {
+			margin-left: -12px;
+		}
+		#sbi_images {
+			.sbi_item {
+				margin: 0 24px 0 0 !important;
+				.sbi_photo {
+					@include breakpoint(small only) {
+					height: 55.2vw !important;
+				}
+					@include breakpoint(medium only) {
+						height: 26.25vw !important;
+					}
+				}
+				
+				@include breakpoint(tablet) {
+					height: 208px !important;
+				}
+				
+			}
+		}
 	}
 	.partners {
+		
 		h2 {
-			margin-bottom: 3.7rem;
+			margin-bottom: 1.2rem;
+			@include breakpoint(medium) {
+				margin-bottom: 3.7rem;
+			}
 		}
 	}
 	hr {
-		margin: 4.95rem 0 0;
+		margin: 2.95rem 0 0;
+		@include breakpoint(medium) {
+			margin: 4.95rem 0 0;
+		}
 	}
 }
 footer#colophon {
 	padding-top: 1.5rem;
 	padding-bottom: 2.75rem;
 	text-align: center;
+	
+	@include breakpoint(medium) {
+		padding-top: 2.88rem;
+	}
 	
 	.inner {
 		@include breakpoint(medium down) {

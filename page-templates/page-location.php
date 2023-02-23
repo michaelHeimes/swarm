@@ -91,7 +91,7 @@ $theme_color = $fields['theme_color'];
 														</div>
 														<div class="cell shrink">
 															<div class="btn-link">
-																<a class="button" href="<?php echo esc_url( get_permalink() );?>" rel="bookmark">Learn More</a>
+																<a class="button no-min-width" href="<?php echo esc_url( get_permalink() );?>" rel="bookmark">Learn More</a>
 															</div>
 														</div>
 													</div>
@@ -100,7 +100,9 @@ $theme_color = $fields['theme_color'];
 										<?php endwhile;?>
 									</div>
 								</div>
-								<div class="bg bg-gradient gradient-bottom"></div>
+								<?php if( !empty($fields['cta_background_image']) ):?>
+									<div class="bg bg-gradient gradient-bottom"></div>
+								<?php endif;?>
 							</section>
 						
 						<?php endif; wp_reset_postdata(); ?>
@@ -117,7 +119,9 @@ $theme_color = $fields['theme_color'];
 					?>
 					
 					<div class="gradient-section-1 has-bg">
-						<div class="bg bg-gradient gradient-top"></div>
+						<?php if( !empty($fields['cta_background_image']) ):?>
+							<div class="bg bg-gradient gradient-top"></div>
+						<?php endif;?>
 					
 						<?php 
 							if( !empty( $fields['image_copy'] ) ) {
@@ -149,6 +153,7 @@ $theme_color = $fields['theme_color'];
 															'name' => $bio_card_fields['name'],
 															'title' => $bio_card_fields['title'],
 															'bio' => $bio_card_fields['bio'],
+															'row' => '',
 														);
 						
 													get_template_part('template-parts/loop', 'staff-card', $args);

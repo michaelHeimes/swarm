@@ -16,8 +16,18 @@ p,
 	line-height: 1.3888; 
 }
 
+a {
+	transition: all .25s ease;
+}
+
 .white-color {
 	color: $heading-white;
+}
+
+a.white-color {
+	&:hover {
+		color: $heading-white;
+	}
 }
 
 .name {
@@ -27,4 +37,13 @@ p,
 
 .job-title {
 	font-size: rem-calc(20);
+}
+
+.entry-content {
+	a {
+		text-decoration: underline;
+	}
+	.menu a {
+		text-decoration: none;
+	}
 }

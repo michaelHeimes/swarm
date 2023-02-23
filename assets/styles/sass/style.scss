@@ -80,13 +80,18 @@
 @import "header";
 @import "footer";
 
+@import "_parts/hero";
 @import "_parts/image-copy";
 @import "_parts/cta-bg-img";
 @import "_parts/staff-card";
 @import "_parts/location-navs";
+@import "_parts/copy-three-img-set";
 
 // @import "_modules/page-modules";
 
 @import "_pages/home";
 @import "_pages/location";
 @import "_pages/single-event";
+@import "_pages/staff";
+@import "_pages/select";
+@import "_pages/about";

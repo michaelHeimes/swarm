@@ -78,11 +78,11 @@ add_filter('admin_footer_text', 'swarm_custom_admin_footer');
 	
 	
 	// add css to admin screens
-	function wpdocs_enqueue_custom_admin_style() {
-			wp_register_style( 'custom_wp_admin_css', get_template_directory_uri() . '/assets/styles/css/admin-style.css', false, '1.0.0' );
-			wp_enqueue_style( 'custom_wp_admin_css' );
-	}
-	add_action( 'admin_enqueue_scripts', 'wpdocs_enqueue_custom_admin_style' );
+	// function wpdocs_enqueue_custom_admin_style() {
+	// 		wp_register_style( 'custom_wp_admin_css', get_template_directory_uri() . '/assets/styles/css/admin-style.css', false, '1.0.0' );
+	// 		wp_enqueue_style( 'custom_wp_admin_css' );
+	// }
+	// add_action( 'admin_enqueue_scripts', 'wpdocs_enqueue_custom_admin_style' );
 	
 	// remove revisions meta box and recreate on right side for all post types
 	function relocate_revisions_metabox() {

@@ -117,9 +117,9 @@
             "return_format": "array"
         },
         {
-            "key": "field_62f2fdde4a61f",
-            "label": "Privacy Policy",
-            "name": "privacy_policy",
+            "key": "field_63f651d983f6e",
+            "label": "Subscribe Link",
+            "name": "subscribe_link",
             "aria-label": "",
             "type": "link",
             "instructions": "",
@@ -151,5 +151,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1676745869
+    "modified": 1677121809
 }

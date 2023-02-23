@@ -356,6 +356,7 @@ header.site-header {
 	}
 		
 	hr {
+		width: 100%;
 		margin-top: 1.15rem;
 		padding-bottom: 1.75rem;
 	}	
@@ -363,6 +364,12 @@ header.site-header {
 	.bottom {
 		.socials-wrap {
 			padding-bottom: 3.92rem;
+			@include breakpoint(medium down) {
+				justify-content: center;
+			}
+			.cell.shrink {
+				padding-left: 0;
+			}
 		}
 		.social-links {
 			margin: 0 .7rem;

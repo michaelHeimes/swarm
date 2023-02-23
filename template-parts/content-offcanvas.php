@@ -21,16 +21,25 @@
 					
 					<div class="bottom text-center">
 				
-						<?php swarm_off_canvas_nav(); ?>
+						<?php swarm_footer_links();?>
 						
 						<?php get_template_part('template-parts/content', 'social-links');?>
 					
 	
 						<div class="pc-link-wrap grid-x align-center">
 							<div class="cell shrink">
-								<div class="btn-wrap">
-									<a class="button white" href="#">Subscribe</a>
-								</div>
+								
+								<?php 
+									$link = get_field('subscribe_link', 'option');
+									if( $link ): 
+										$link_url = $link['url'];
+										$link_title = $link['title'];
+										$link_target = $link['target'] ? $link['target'] : '_self';
+										?>
+									<div class="btn-wrap">
+										<a class="button white" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+									</div>
+								<?php endif; ?>
 								<?php 
 								$link = get_field('parent_company_link', 'option');
 								if( $link ): 

@@ -1,9 +1,9 @@
 .img-copy-card  {
-	.inner {
-		@include breakpoint(tablet) {
-			padding-bottom: 52px;
-		}
-	}
+	// .inner {
+	// 	@include breakpoint(tablet) {
+	// 		padding-bottom: 52px;
+	// 	}
+	// }
 	.left {
 		position: relative;
 		z-index: 2;
@@ -25,6 +25,19 @@
 		@include breakpoint(tablet) {
 			padding-top: 2rem;
 			padding-bottom: 2rem;
+		}
+		
+		&:after {
+			content: "";
+			width: 858px;
+			height: 537px;	
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translate(0, -59%);
+			z-index: -2;
+			background-image: url(../images/testimonials-hex-pattern.png);
+			background-size: cover;
 		}
 		
 		h2 {

@@ -64,12 +64,25 @@
 		}
 		
 	}
+	
+&.vertical {
+	margin-bottom: 1.4rem;
+	
+	.left {
+		padding-top: .55rem;
+		
+		.btn-wrap {
+			padding-top: 1rem;
+		}
+		
+	}
+	
+}
+	
 }
 
 .staff-reveal {
 	padding: 0 0 2.6rem;
-	
-
 	
 	.top {
 		position: relative;
