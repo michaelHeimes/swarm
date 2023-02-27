@@ -7801,6 +7801,9 @@ hr {
   z-index: 1;
   padding-top: 6.7rem;
 }
+.entry-content:not(.home).default-content {
+  padding-bottom: 6.7rem;
+}
 
 button,
 .button {
@@ -8859,32 +8862,47 @@ footer#colophon .footer-links-wrap {
             justify-content: flex-start;
   }
 }
+footer#colophon .footer-links-wrap {
+  padding-bottom: 0.5rem;
+}
 footer#colophon .footer-link {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 footer#colophon .socials-wrap {
+  padding-bottom: 3.9rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
-@media print, screen and (max-width: 56.24875em) {
+@media print, screen and (min-width: 40em) {
   footer#colophon .socials-wrap {
-    padding-bottom: 4.08rem;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
 }
 footer#colophon a.pp-link {
   color: #fff;
 }
-footer#colophon .btn-wrap {
-  padding-bottom: 2.2rem;
+@media print, screen and (max-width: 39.99875em) {
+  footer#colophon .btn-wrap {
+    padding-bottom: 2.1875rem;
+  }
 }
-footer#colophon .btn-wrap a {
-  width: 100%;
+@media print, screen and (min-width: 40em) {
+  footer#colophon .btn-wrap {
+    text-align: left;
+  }
 }
 footer#colophon .pc-link-wrap {
   text-align: center;
+}
+@media print, screen and (min-width: 40em) {
+  footer#colophon .pc-link-wrap {
+    text-align: right;
+  }
 }
 footer#colophon .pc-link-wrap .img-wrap {
   padding-bottom: 0.6875rem;
@@ -8893,7 +8911,7 @@ footer#colophon .pc-link-wrap a {
   display: inline-block;
 }
 footer#colophon .site-info {
-  padding-top: 2.85rem;
+  padding-top: 1.85rem;
 }
 
 .offcanvas-nav,
@@ -8914,6 +8932,14 @@ ul.footer-links li a {
   text-transform: uppercase;
   font-family: ff-good-headline-web-pro, sans-serif;
   padding: 0;
+}
+
+@media print, screen and (max-width: 39.99875em) {
+  ul.footer-links {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .socials-wrap .label-wrap {

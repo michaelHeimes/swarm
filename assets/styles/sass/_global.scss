@@ -157,6 +157,11 @@ hr {
 	position: relative;
 	z-index: 1;
 	padding-top: 6.7rem;
+	
+	&.default-content {
+		padding-bottom: 6.7rem;
+	}
+	
 }
 
 button,

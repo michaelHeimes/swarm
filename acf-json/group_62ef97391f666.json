@@ -788,11 +788,9 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [
-        "the_content"
-    ],
+    "hide_on_screen": "",
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1677098635
+    "modified": 1677520646
 }

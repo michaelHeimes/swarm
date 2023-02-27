@@ -121,26 +121,35 @@ footer#colophon {
 			justify-content: flex-start;
 		}
 	}
+	.footer-links-wrap {
+		padding-bottom: .5rem;
+	}
 	.footer-link {
 		justify-content: center;
 	}
 	.socials-wrap {
+		padding-bottom: 3.9rem;
 		justify-content: center;
-		@include breakpoint(medium down) {
-			padding-bottom: 4.08rem;
+		@include breakpoint(medium) {
+			justify-content: flex-start;
 		}
 	}
 	a.pp-link {
 		color: $white;
 	}
 	.btn-wrap {
-		padding-bottom: 2.2rem;
-		a {
-			width: 100%;
+		@include breakpoint(small down) {
+			padding-bottom: 2.1875rem;
+		}
+		@include breakpoint(medium) {
+			text-align: left;
 		}
 	}
 	.pc-link-wrap {
 		text-align: center;
+		@include breakpoint(medium) {
+			text-align: right;
+		}
 		.img-wrap {
 			padding-bottom: 0.6875rem;
 		}
@@ -150,7 +159,7 @@ footer#colophon {
 	}
 
 	.site-info {
-		padding-top: 2.85rem;
+		padding-top: 1.85rem;
 	}
 	
 }
@@ -170,6 +179,12 @@ ul.footer-links {
 			font-family: $font-body;
 			padding: 0;
 		}
+	}
+}
+
+ul.footer-links {
+	@include breakpoint(small down) {
+		justify-content: center;
 	}
 }
 
