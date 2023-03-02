@@ -102,7 +102,7 @@ div#page {
 	width: 100%;
 }
 
-.entry-header {
+.entry-header:not(.event) {
 	z-index: 0;
 	position: relative;
 	&:before {

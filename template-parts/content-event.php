@@ -23,7 +23,7 @@ $archive_link = get_term_link($first_term);
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<header class="entry-header event">
 		<div class="grid-container">
 			<div class="grid-x grid-padding-x">
 				<div class="back-wrap cell small-12 text-right">

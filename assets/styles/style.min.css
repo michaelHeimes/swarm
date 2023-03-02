@@ -7746,11 +7746,11 @@ div#page {
   width: 100%;
 }
 
-.entry-header {
+.entry-header:not(.event) {
   z-index: 0;
   position: relative;
 }
-.entry-header:before {
+.entry-header:not(.event):before {
   content: "";
   position: absolute;
   width: 100%;
@@ -7763,30 +7763,30 @@ div#page {
   background-position: 20% 50%;
   background-repeat: no-repeat;
 }
-.entry-header.hero:before {
+.entry-header:not(.event).hero:before {
   -webkit-transform: translate(-50%, 107%);
           transform: translate(-50%, 107%);
   background-position: 0% 50%;
 }
 @media print, screen and (min-width: 56.25em) {
-  .entry-header.hero:before {
+  .entry-header:not(.event).hero:before {
     -webkit-transform: translate(0%, 65%);
             transform: translate(0%, 65%);
     background-position: -6% 50%;
   }
 }
-.entry-header:not(.hero) .bg {
+.entry-header:not(.event):not(.hero) .bg {
   z-index: -1;
   background-position: 50% 100%;
 }
-.entry-header:not(.hero) .grid-x {
+.entry-header:not(.event):not(.hero) .grid-x {
   min-height: 31.7365vw;
   padding-top: 5.3rem;
   padding-top: 13rem;
   padding-bottom: 5.3rem;
 }
 @media screen and (min-width: 90em) {
-  .entry-header:not(.hero) .grid-x {
+  .entry-header:not(.event):not(.hero) .grid-x {
     min-height: 457px;
   }
 }
