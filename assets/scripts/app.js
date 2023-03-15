@@ -275,6 +275,71 @@
             });            
         }
     }
+    
+    _app.nation_map = function() {
+        $('#locations-map-modal .locations-nav').foundation('_destroy');
+        $('#locations-map-modal .locations-nav > li > ul li').hide();
+        
+        $('.nation-state').click( function(){
+            const thisID = $(this).attr('id');
+            const clickedState = thisID.toLowerCase();
+
+            // State Parents
+            const newEngland = $('#locations-map-modal .new-england');
+            
+            // State Parents
+            const triState = $('#locations-map-modal .tri-state');
+
+            // States
+            const ma = $('#locations-map-modal .massachusetts');
+            const ri = $('#locations-map-modal .rhode-island');
+            const ny = $('#locations-map-modal .new-york');
+            
+            // if( $(this).hasClass('open') ) {
+            //     $(this).removeClass('open');
+            //     $(this).find('li').hide();
+            // } else {
+            //     $(this).addClass('open');
+            //     $(this).find('li').show();
+            // }
+            
+            console.log(clickedState);
+       
+            if( clickedState == 'ny' ) {
+                triState.show();
+                ny.show();
+                ny.find('li').show();
+            } else {
+                triState.hide();
+                ny.hide();
+                ny.find('li').hide();
+            } 
+            
+            if ( clickedState == 'ri' ) {
+                console.log("rhode island");
+                const linkedPage =  $(ri).find('a').attr('href');
+                window.location.href = linkedPage;
+            } else {
+                
+            }
+                
+            if ( clickedState == 'ma' ) {
+                newEngland.show();
+                ma.show();
+                ma.find('li').show();
+            } else {
+                newEngland.hide();
+                ma.hide();
+                ma.find('li').hide();
+            }
+            
+            if( $(this).hasClass('no-modal') ) {
+                // do nothing
+            } else {
+                $('#locations-map-modal').foundation('open');
+            }
+        });
+    }
             
     _app.init = function() {
         
@@ -291,6 +356,7 @@
         _app.three_img_set();
         _app.testimonials_slider();
         _app.footer_social_slider();
+        _app.nation_map();
     }
     
     
