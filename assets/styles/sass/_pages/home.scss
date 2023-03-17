@@ -10,6 +10,56 @@
 		
 	}
 	
+	.nation-map-wrap {
+		.nation-state {
+			cursor: pointer;
+			transition: all .3s ease;
+			fill: #808080;
+		
+		&:hover {
+			fill: darken(#808080, 20%);
+			}
+		}
+	}
+	
+	.map-location-reveal {
+		background-color: #EAEAEA;
+		max-width: 370px;
+		padding: 1rem 2rem;
+		.locations-nav {
+			font-family: $font-heading;
+			text-transform: uppercase;
+			> li {
+				> ul {
+					> li {
+						> a {
+							display: none
+						}
+						> ul {
+							> li {
+								> a {
+									color: #000;
+									cursor: default;
+									font-size: rem-calc(54);
+								}
+								> ul {
+									> li {
+										>a {
+											font-size: rem-calc(35);
+											span {
+												padding-left: 0;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
 	.locations {
 		padding-top: 3.88rem;
 		margin-top: -5rem;
