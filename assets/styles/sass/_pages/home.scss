@@ -26,6 +26,8 @@
 		background-color: #EAEAEA;
 		max-width: 370px;
 		padding: 1rem 2rem;
+		top: 50% !important;
+		transform: translateY(-50%);
 		.locations-nav {
 			font-family: $font-heading;
 			text-transform: uppercase;

@@ -9502,6 +9502,9 @@ ul.footer-links li a {
   background-color: #EAEAEA;
   max-width: 370px;
   padding: 1rem 2rem;
+  top: 50% !important;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 .page-template-page-home .map-location-reveal .locations-nav {
   font-family: bebas-neue-pro, sans-serif;
