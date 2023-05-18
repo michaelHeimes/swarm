@@ -1,0 +1,7 @@
+.page-template-page-templates .staff-cards .img-wrap {
+  max-width: 170px;
+}
+.page-template-page-templates .staff-cards .img-wrap svg,
+.page-template-page-templates .staff-cards .img-wrap img {
+  max-width: 100%;
+}

@@ -622,14 +622,6 @@ $fields = get_fields();
 												</div>
 											</div>
 										</div>
-										<?php if( !empty( $fields['locations_map_image'] ) ) {
-											$imgID = $fields['locations_map_image']['ID'];
-											$img_alt = trim( strip_tags( get_post_meta( $imgID, '_wp_attachment_image_alt', true ) ) );
-											$img = wp_get_attachment_image( $imgID, 'full', false, [ "class" => "", "alt"=>$img_alt] );
-											echo '<div class="img-wrap">';
-											echo $img;
-											echo '</div>';
-										}?>
 										<div class="on-page-locations-wrap text-left">
 											<div class="hide-for-tablet grid-x align-center">
 												<button class="button white" data-toggle="on-page-locations-dropdown">

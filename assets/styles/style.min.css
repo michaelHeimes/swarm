@@ -10034,4 +10034,13 @@ ul.footer-links li a {
             transform-origin: center left;
   }
 }
+
+.page-template-page-templates .staff-cards .img-wrap {
+  max-width: 94px;
+  max-height: 94px;
+}
+.page-template-page-templates .staff-cards .img-wrap svg,
+.page-template-page-templates .staff-cards .img-wrap img {
+  max-height: 100%;
+}
 /*# sourceMappingURL=style.min.css.map */

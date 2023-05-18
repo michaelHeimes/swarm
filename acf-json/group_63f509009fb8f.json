@@ -77,7 +77,7 @@
             "name": "team_logo",
             "aria-label": "",
             "type": "image",
-            "instructions": "",
+            "instructions": "This logo will be limited to 94px by 94px. The recommended size is 188px in width or height (whichever is larger).",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -115,5 +115,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1677004125
+    "modified": 1684423243
 }
