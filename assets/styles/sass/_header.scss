@@ -10,6 +10,10 @@ body:not(.single-event) {
 	}
 }
 
+body.mobile-nav-open header.site-header {
+	background-color: $black;
+}
+
 header.site-header {
 	z-index: 999;
 	transition: background-color .3s ease;
